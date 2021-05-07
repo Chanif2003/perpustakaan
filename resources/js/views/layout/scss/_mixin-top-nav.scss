@@ -1,0 +1,40 @@
+.TopNav {
+    z-index: 2;
+    background-color: #fff;
+    // background-image: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 270px;
+    width: calc(100% - 270px);
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+    .Item-left {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        :first-child{
+            cursor: pointer;
+        }
+    }
+
+    .Item-right {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+
+        .Img-Item-right {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+        }
+    }
+}

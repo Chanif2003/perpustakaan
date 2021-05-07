@@ -1,0 +1,102 @@
+:root {
+    --main-primary: #219EBC;
+    --main-primary-dark: #264653;
+    --main-primary-light: #8ECAE6;
+    --colors-yellow: #FFB703;
+    --colors-orange: #FB8500;
+    --text-color-dark: rgb(88, 88, 88);
+    --text-color-white: rgb(255, 255, 255);
+}
+
+@import '../../../assets/scss/global';
+@import "./mixin-sidebar";
+@import "./mixin-top-nav";
+@import "./_mixin-content";
+
+@import "./_mixin-navigator";
+
+#nav-toggle {
+    display: none;
+}
+
+#nav-toggle:checked {
+    &~.sidebar {
+        left: -300px !important;
+        transition: left 300ms;
+    }
+
+    &~.Main-Content {
+        padding-left: 10px;
+        padding-top: 60px;
+    }
+
+    &~.TopNav {
+        left: 0px;
+        width: calc(100%);
+    }
+
+}
+
+
+// nav Top
+
+
+
+@include media-query-only('sm') {
+    .sidebar {
+        left: -300px !important;
+    }
+
+    .Main-Content {
+        padding-left: 10px;
+        padding-top: 50px;
+    }
+
+    .TopNav {
+        left: 0px;
+        width: calc(100%);
+    }
+
+    #nav-toggle:checked {
+        &~.sidebar {
+            left: 0px !important;
+            transition: left 300ms;
+        }
+    
+        &~.Main-Content {
+            padding-left: 10px;
+            padding-top: 60px;
+        }
+    
+        &~.TopNav {
+            left: 0px;
+            width: calc(100%);
+        }
+    
+    }
+}
+
+@include media-query-only('sm') {
+    .navigator {
+        left: -100px;
+    }
+
+    .Client-Content {
+        padding-left: 0px !important;
+    }
+}
+
+
+// ///////////
+.Client-Content {
+    width: 100%;
+    left: 80px;
+    padding-left: 80px;
+}
+
+.containerBase {
+    background-color: #F9F9F9;
+    width: 100%;
+    height: 100%;
+    background-image: url('http://127.0.0.1:8000/img/icon/us_bg.svg');
+}
