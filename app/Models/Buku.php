@@ -18,6 +18,7 @@ class Buku extends Model
         "jumlah_halaman",
         "stok",
         "tahun_terbit",
+        "deskripsi",
         "image"
     ];
 }

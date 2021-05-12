@@ -28,7 +28,24 @@ class BukuController extends Controller
                         return response()->json(["status" => 409, "msg" => "aksi gagal pada database"]);
                     }
                     break;
-
+                case 'update':
+                    $thm = $this->Upgambar($request, 'image', '/img/Buku');
+                    if ($thm['status']) {
+                        $post = $post + ["image" => $thm['fileName']];
+                    }
+                    if (Buku::wherekodeBuku($request->kode_buku)->update($post)) {
+                        return response()->json(["status" => 200, "msg" => "aksi berhasil"]);
+                    } else {
+                        return response()->json(["status" => 409, "msg" => "aksi gagal pada database"]);
+                    }
+                    break;
+                case 'delete':
+                    if (Buku::wherekodeBuku($request->kode_buku)->delete()) {
+                        return response()->json(["status" => 200, "msg" => "aksi berhasil"]);
+                    } else {
+                        return response()->json(["status" => 409, "msg" => "aksi gagal pada database"]);
+                    }
+                    break;
                 default:
                     # code...
                     break;
@@ -38,6 +55,20 @@ class BukuController extends Controller
         }
     }
 
+    public function cek_kode($kode)
+    {
+        $ceks = Buku::wherekode_buku($kode)->count();
+        return response()->json($ceks);
+    }
+    public function getdataBuku()
+    {
+        try {
+            $get = Buku::all();
+            return response()->json($get);
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
+            return response()->json([]);
+        }
+    }
     public function Upgambar($request, $nameFile, $path)
     {
         if ($request->hasFile($nameFile)) {
@@ -55,5 +86,9 @@ class BukuController extends Controller
         } else {
             return ["status" => false, "msg" => "tidak ada gambar"];
         }
+    }
+    public function getDataByKode($id)
+    {
+        return response()->json(Buku::wherekodeBuku($id)->first());
     }
 }

@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/{slug?}', function () {
     return view('index');
 });
+
+Route::get('/{slug?}/{slugs?}', function () {
+    return view('index');
+});
