@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Buku;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use \Illuminate\Support\Str;
 
@@ -57,13 +58,21 @@ class BukuController extends Controller
 
     public function cek_kode($kode)
     {
+
         $ceks = Buku::wherekode_buku($kode)->count();
         return response()->json($ceks);
     }
-    public function getdataBuku()
+    public function getdataBuku($search = null)
     {
         try {
-            $get = Buku::all();
+            $get = DB::table('buku')
+                ->where('buku.kode_buku', 'like', '%' . $search . '%')
+                ->orWhere('buku.judul_buku', 'like', '%' . $search . '%')
+                ->orWhere('buku.Kategori', 'like', '%' . $search . '%')
+                ->get();
+
+
+            // $get = Buku::all();
             return response()->json($get);
         } catch (\GuzzleHttp\Exception\ClientException $e) {
             return response()->json([]);
@@ -90,5 +99,10 @@ class BukuController extends Controller
     public function getDataByKode($id)
     {
         return response()->json(Buku::wherekodeBuku($id)->first());
+    }
+    public function getBukuByKodeBuku($kode = null)
+    {
+        $resData = Buku::wherekodeBuku($kode);
+        return response()->json(['count' => $resData->count(), 'result' => $resData->first()]);
     }
 }

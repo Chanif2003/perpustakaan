@@ -9,10 +9,13 @@ import BaseLayout from "../views/layout/Layout-base/Lay-sidebar";
 import Dashboard from "../views/pages/Page-Buku/Buku";
 import Buku from "../views/pages/Page-Buku/Buku";
 import Barcode from "../views/pages/TestBarcode";
-import Login from "../views/pages/Login";
+import Login from "../views/pages/Login/Login";
+import Anggota from "../views/pages/Anggota/Anggota";
+import Peminjaman from "../views/pages/Peminjaman/Peminjaman";
 // -----------------------------------------------------------
 // ////child/////////////////////
 import DetailBuku from "../views/pages/Page-Buku/DeskripsiBuku";
+import DetailAnggota from "../views/pages/Anggota/DetailUser";
 // /////////////////////////////
 export default function index() {
     return (
@@ -31,6 +34,26 @@ export default function index() {
                 <Route path="/detailBuku/:kode">
                     <BaseLayout>
                         <DetailBuku />
+                    </BaseLayout>
+                </Route>
+                <Route path="/Anggota">
+                    <BaseLayout>
+                        <Anggota />
+                    </BaseLayout>
+                </Route>
+                <Route path="/detailAnggota/:kode_anggota">
+                    <BaseLayout>
+                        <DetailAnggota />
+                    </BaseLayout>
+                </Route>
+                <Route path="/Pinjaman">
+                    <BaseLayout>
+                        <Peminjaman />
+                    </BaseLayout>
+                </Route>
+                <Route path="/Pinjaman/:kode">
+                    <BaseLayout>
+                        <Peminjaman />
                     </BaseLayout>
                 </Route>
                 <Route path="/Barcode">

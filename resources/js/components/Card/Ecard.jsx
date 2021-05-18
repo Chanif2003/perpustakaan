@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import "./style.scss";
 const ECard = (props) => {
     return (
-        <div className={`e-card ${props.className}`} style={props.style}>
+        <div
+            className={`e-card ${props.className}`}
+            style={props.style}
+            onClick={props.onClick}
+        >
             {props.title != null && (
                 <div className="e-card-title">
                     <div className="w-100">{props.title}</div>

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import "./scss/_login.scss";
-import { base_url } from "../../constant/constant";
+import { base_url } from "../../../constant/constant";
 const Cookies = require("js-cookie");
 export default function Login() {
     const Login = (event) => {

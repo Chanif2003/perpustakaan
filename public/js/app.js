@@ -2212,6 +2212,7 @@ __webpack_require__.r(__webpack_exports__);
 function componentName(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
     className: "circle ".concat(props.className),
+    style: props.style,
     onClick: props.onClick,
     children: props.children
   });
@@ -2412,6 +2413,7 @@ var ECardMsg = /*#__PURE__*/function (_Component) {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         id: "ECardMsg",
         style: this.props.style,
+        className: this.props.className,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
           className: "title",
           style: this.props.titleStyle,
@@ -2460,6 +2462,7 @@ var ECard = function ECard(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "e-card ".concat(props.className),
     style: props.style,
+    onClick: props.onClick,
     children: [props.title != null && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "e-card-title",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -2511,13 +2514,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ index)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _views_layout_Layout_base_Lay_sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../views/layout/Layout-base/Lay-sidebar */ "./resources/js/views/layout/Layout-base/Lay-sidebar.jsx");
 /* harmony import */ var _views_pages_Page_Buku_Buku__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../views/pages/Page-Buku/Buku */ "./resources/js/views/pages/Page-Buku/Buku.jsx");
 /* harmony import */ var _views_pages_TestBarcode__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../views/pages/TestBarcode */ "./resources/js/views/pages/TestBarcode.jsx");
-/* harmony import */ var _views_pages_Login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../views/pages/Login */ "./resources/js/views/pages/Login.jsx");
-/* harmony import */ var _views_pages_Page_Buku_DeskripsiBuku__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../views/pages/Page-Buku/DeskripsiBuku */ "./resources/js/views/pages/Page-Buku/DeskripsiBuku.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _views_pages_Login_Login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../views/pages/Login/Login */ "./resources/js/views/pages/Login/Login.jsx");
+/* harmony import */ var _views_pages_Anggota_Anggota__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../views/pages/Anggota/Anggota */ "./resources/js/views/pages/Anggota/Anggota.jsx");
+/* harmony import */ var _views_pages_Peminjaman_Peminjaman__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../views/pages/Peminjaman/Peminjaman */ "./resources/js/views/pages/Peminjaman/Peminjaman.jsx");
+/* harmony import */ var _views_pages_Page_Buku_DeskripsiBuku__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../views/pages/Page-Buku/DeskripsiBuku */ "./resources/js/views/pages/Page-Buku/DeskripsiBuku.jsx");
+/* harmony import */ var _views_pages_Anggota_DetailUser__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../views/pages/Anggota/DetailUser */ "./resources/js/views/pages/Anggota/DetailUser.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
  // //////////////////
 // import TestBarcode from "../views/pages/TestBarcode";
@@ -2527,8 +2533,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
  // -----------------------------------------------------------
 // ////child/////////////////////
+
 
  // /////////////////////////////
 
@@ -2536,31 +2545,51 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function index() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Switch, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Switch, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
         path: "/",
         exact: true,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_views_layout_Layout_base_Lay_sidebar__WEBPACK_IMPORTED_MODULE_1__.default, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_views_pages_Page_Buku_Buku__WEBPACK_IMPORTED_MODULE_2__.default, {})
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_views_layout_Layout_base_Lay_sidebar__WEBPACK_IMPORTED_MODULE_1__.default, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_views_pages_Page_Buku_Buku__WEBPACK_IMPORTED_MODULE_2__.default, {})
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
         path: "/Buku",
         exact: true,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_views_layout_Layout_base_Lay_sidebar__WEBPACK_IMPORTED_MODULE_1__.default, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_views_pages_Page_Buku_Buku__WEBPACK_IMPORTED_MODULE_2__.default, {})
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_views_layout_Layout_base_Lay_sidebar__WEBPACK_IMPORTED_MODULE_1__.default, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_views_pages_Page_Buku_Buku__WEBPACK_IMPORTED_MODULE_2__.default, {})
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
         path: "/detailBuku/:kode",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_views_layout_Layout_base_Lay_sidebar__WEBPACK_IMPORTED_MODULE_1__.default, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_views_pages_Page_Buku_DeskripsiBuku__WEBPACK_IMPORTED_MODULE_5__.default, {})
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_views_layout_Layout_base_Lay_sidebar__WEBPACK_IMPORTED_MODULE_1__.default, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_views_pages_Page_Buku_DeskripsiBuku__WEBPACK_IMPORTED_MODULE_7__.default, {})
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+        path: "/Anggota",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_views_layout_Layout_base_Lay_sidebar__WEBPACK_IMPORTED_MODULE_1__.default, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_views_pages_Anggota_Anggota__WEBPACK_IMPORTED_MODULE_5__.default, {})
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+        path: "/detailAnggota/:kode_anggota",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_views_layout_Layout_base_Lay_sidebar__WEBPACK_IMPORTED_MODULE_1__.default, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_views_pages_Anggota_DetailUser__WEBPACK_IMPORTED_MODULE_8__.default, {})
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+        path: "/Pinjaman",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_views_layout_Layout_base_Lay_sidebar__WEBPACK_IMPORTED_MODULE_1__.default, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_views_pages_Peminjaman_Peminjaman__WEBPACK_IMPORTED_MODULE_6__.default, {})
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+        path: "/Pinjaman/:kode",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_views_layout_Layout_base_Lay_sidebar__WEBPACK_IMPORTED_MODULE_1__.default, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_views_pages_Peminjaman_Peminjaman__WEBPACK_IMPORTED_MODULE_6__.default, {})
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
         path: "/Barcode",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_views_pages_TestBarcode__WEBPACK_IMPORTED_MODULE_3__.default, {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_views_pages_TestBarcode__WEBPACK_IMPORTED_MODULE_3__.default, {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
         path: "/login",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_views_pages_Login__WEBPACK_IMPORTED_MODULE_4__.default, {})
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_views_pages_Login_Login__WEBPACK_IMPORTED_MODULE_4__.default, {})
       })]
     })
   });
@@ -2868,10 +2897,880 @@ var TopNav = function TopNav() {
 
 /***/ }),
 
-/***/ "./resources/js/views/pages/Login.jsx":
-/*!********************************************!*\
-  !*** ./resources/js/views/pages/Login.jsx ***!
-  \********************************************/
+/***/ "./resources/js/views/pages/Anggota/Anggota.jsx":
+/*!******************************************************!*\
+  !*** ./resources/js/views/pages/Anggota/Anggota.jsx ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Anggota)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _components_Card_Card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/Card/Card */ "./resources/js/components/Card/Card.jsx");
+/* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Input */ "./resources/js/views/pages/Anggota/Input.jsx");
+/* harmony import */ var _Output__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Output */ "./resources/js/views/pages/Anggota/Output.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+ // -- component init--
+
+
+ // -------------------
+
+
+
+function Anggota() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      toggle = _useState2[0],
+      setToggel = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      pushValue = _useState4[0],
+      setPushValue = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("save"),
+      _useState6 = _slicedToArray(_useState5, 2),
+      cases = _useState6[0],
+      setCases = _useState6[1];
+
+  var hendlInp = function hendlInp() {
+    setToggel(true);
+    setPushValue(null);
+  };
+
+  var hendltoggelInput = function hendltoggelInput() {
+    setToggel(false);
+    setCases("save");
+  };
+
+  var hendlEdit = function hendlEdit(data) {
+    setPushValue(data);
+    setToggel(true);
+    setCases("edit");
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    className: "row",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "col-lg-12 mb-3",
+      style: {
+        display: "flex",
+        justifyContent: "space-between"
+      },
+      children: toggle === false && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+        className: "btn btn-primary btn-sm",
+        onClick: hendlInp,
+        children: "Anggota Pustaka Baru"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "col-lg-6 mb-1 inp",
+      children: toggle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Input__WEBPACK_IMPORTED_MODULE_2__.default, {
+        hendltoggelInput: hendltoggelInput,
+        pushValues: pushValue,
+        cases: cases
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: toggle ? "col-lg-6" : "col-lg-12" + " mb-1 out",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Output__WEBPACK_IMPORTED_MODULE_3__.default, {
+        classItem: toggle ? "col-lg-12" : "col-lg-6",
+        edit: hendlEdit
+      })
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/views/pages/Anggota/DetailUser.jsx":
+/*!*********************************************************!*\
+  !*** ./resources/js/views/pages/Anggota/DetailUser.jsx ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ DetailUser)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _components_Card_Ecard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/Card/Ecard */ "./resources/js/components/Card/Ecard.jsx");
+/* harmony import */ var _constant_constant__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../constant/constant */ "./resources/js/constant/constant.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+var JsBarcode = __webpack_require__(/*! jsbarcode */ "./node_modules/jsbarcode/bin/JsBarcode.js");
+
+function DetailUser(props) {
+  var history = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useHistory)();
+  var handleRoute = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(function () {
+    return history.push("/Anggota");
+  }, [history]);
+  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useLocation)();
+
+  var getLocationParams = function getLocationParams() {
+    var url = location.pathname.substr(1).split("/");
+    return url;
+  };
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      loading = _useState2[0],
+      setLoading = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      data = _useState4[0],
+      setData = _useState4[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    setLoading(true);
+    getDataUser(getLocationParams()[1]);
+  }, []);
+
+  var getDataUser = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(us) {
+      var get;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return axios__WEBPACK_IMPORTED_MODULE_4___default().get(_constant_constant__WEBPACK_IMPORTED_MODULE_3__.base_url + "api/getDataAnggotaById/" + us);
+
+            case 2:
+              get = _context.sent;
+              setData(get.data);
+              setInterval(function () {
+                setLoading(false);
+              }, 1000);
+
+            case 5:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function getDataUser(_x) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  var loadingPage = function loadingPage() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+        children: "Loading..."
+      })
+    });
+  };
+
+  var render = function render() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      className: "row",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "col-md-3"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "col-lg-6 mb-3",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Card_Ecard__WEBPACK_IMPORTED_MODULE_2__.default, {
+          title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+            className: "btn btn-secondary btn-sm mb-1",
+            onClick: handleRoute,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("i", {
+              className: "las la-arrow-alt-circle-left"
+            })
+          }),
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            className: "container",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              style: {
+                display: "flex",
+                alignItems: "center",
+                flexDirection: "column"
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+                src: "".concat(_constant_constant__WEBPACK_IMPORTED_MODULE_3__.base_url, "img/User/").concat(data.foto),
+                width: "100px",
+                height: "100px"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
+                children: data.name
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
+                children: data.kode_anggota
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              className: "mt-2",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                style: styleReference,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
+                  children: "Jenis Klamin"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+                  style: {
+                    marginBottom: 0
+                  },
+                  children: data.jenis_klamin
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                style: styleReference,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
+                  children: "Tempat Tanggal Lahir"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+                  style: {
+                    marginBottom: 0
+                  },
+                  children: data.tempat_lahir + " " + data.tanggal_lahir
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                style: styleReference,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
+                  children: "No Telepon"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+                  style: {
+                    marginBottom: 0
+                  },
+                  children: data.tlp
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                style: styleReference,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
+                  children: "Alamat"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+                  style: {
+                    marginBottom: 0
+                  },
+                  children: data.alamat
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                style: styleReference,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
+                  children: "Thun Masuk"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+                  style: {
+                    marginBottom: 0
+                  },
+                  children: data.tahun_masuk
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                style: styleReference,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
+                  children: "Jadi Anggota Pada Tanggal"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+                  style: {
+                    marginBottom: 0
+                  },
+                  children: data.created_at
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("hr", {})]
+            })]
+          })
+        })
+      })]
+    });
+  };
+
+  return loading ? loadingPage() : render();
+}
+var styleReference = {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  marginTop: "1rem"
+};
+
+/***/ }),
+
+/***/ "./resources/js/views/pages/Anggota/Input.jsx":
+/*!****************************************************!*\
+  !*** ./resources/js/views/pages/Anggota/Input.jsx ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Input)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _components_Card_Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/Card/Card */ "./resources/js/components/Card/Card.jsx");
+/* harmony import */ var _components_Button_CircleButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Button/CircleButton */ "./resources/js/components/Button/CircleButton.jsx");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _constant_constant__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../constant/constant */ "./resources/js/constant/constant.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+
+var swal = function swal() {
+  sweetalert2__WEBPACK_IMPORTED_MODULE_7___default().fire({
+    title: "Please Wait !",
+    html: "Loading....",
+    didOpen: function didOpen() {
+      sweetalert2__WEBPACK_IMPORTED_MODULE_7___default().showLoading();
+    }
+  });
+};
+
+function Input(props) {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("adm-save"),
+      _useState2 = _slicedToArray(_useState, 2),
+      cases = _useState2[0],
+      setCases = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      upData = _useState4[0],
+      setUpData = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      loading = _useState6[0],
+      setLoading = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
+      _useState8 = _slicedToArray(_useState7, 2),
+      kode_anggota = _useState8[0],
+      setKode_anggota = _useState8[1];
+
+  var getYear = function getYear() {
+    var now = moment__WEBPACK_IMPORTED_MODULE_4___default()().year();
+    var indents = [];
+
+    for (var i = now; i >= 2015; i--) {
+      indents.push(i);
+    }
+
+    return indents;
+  };
+
+  var hendlsubmit = function hendlsubmit() {
+    event.preventDefault();
+    var form_data = new FormData(event.target);
+    form_data.append("case", cases);
+
+    if (kode_anggota != null) {
+      form_data.append("kode_anggota", kode_anggota);
+    } // for (var pair of form_data.entries()) {
+    //     console.log(pair[0] + ", " + pair[1]);
+    // }
+
+
+    save(form_data);
+    swal();
+  };
+
+  var save = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(data) {
+      var push;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              sweetalert2__WEBPACK_IMPORTED_MODULE_7___default().close();
+              _context.next = 3;
+              return axios__WEBPACK_IMPORTED_MODULE_5___default().post(_constant_constant__WEBPACK_IMPORTED_MODULE_6__.base_url + "api/anggota", data);
+
+            case 3:
+              push = _context.sent;
+              console.log(push);
+
+              if (push.data.status == 200) {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_7___default().fire({
+                  icon: "success",
+                  title: "Good Job",
+                  text: "Berhasil",
+                  confirmButtonText: "Ok"
+                }).then(function (result) {
+                  if (result.isConfirmed) {
+                    window.location.reload();
+                  }
+                });
+              } else {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_7___default().fire({
+                  icon: "error",
+                  title: "Oops..!",
+                  text: res.data.msg,
+                  confirmButtonText: "Ok"
+                }).then(function (result) {
+                  if (result.isConfirmed) {
+                    window.location.reload();
+                  }
+                });
+              }
+
+            case 6:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function save(_x) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    if (props.cases == "edit") {
+      setValueInput(props.pushValues);
+      setCases("update");
+    }
+  }, [props.cases, props.pushValues, upData]);
+
+  var setValueInput = function setValueInput(dataUps) {
+    var updateData = dataUps;
+    setUpData(updateData);
+    setKode_anggota(updateData.kode_anggota);
+    jquery__WEBPACK_IMPORTED_MODULE_8___default()("[name='name']").val(updateData.name);
+    jquery__WEBPACK_IMPORTED_MODULE_8___default()("[name='email']").val(updateData.email);
+    jquery__WEBPACK_IMPORTED_MODULE_8___default()("[name='password']").val("********");
+    jquery__WEBPACK_IMPORTED_MODULE_8___default()("[name='jenis_klamin']").val(updateData.jenis_klamin);
+    jquery__WEBPACK_IMPORTED_MODULE_8___default()("[name='tempat_lahir']").val(updateData.tempat_lahir);
+    jquery__WEBPACK_IMPORTED_MODULE_8___default()("[name='tanggal_lahir']").val(updateData.tanggal_lahir);
+    jquery__WEBPACK_IMPORTED_MODULE_8___default()("[name='tlp']").val(updateData.tlp);
+    jquery__WEBPACK_IMPORTED_MODULE_8___default()("[name='alamat']").val(updateData.alamat);
+    jquery__WEBPACK_IMPORTED_MODULE_8___default()("[name='tahun_masuk']").val(updateData.tahun_masuk);
+    jquery__WEBPACK_IMPORTED_MODULE_8___default()(".simpan").removeClass("btn-primary").addClass("btn-success").text("Edit");
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Card_Card__WEBPACK_IMPORTED_MODULE_2__.ECard, {
+    title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+      style: {
+        display: "flex",
+        justifyContent: "space-between"
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h6", {
+        children: "Form Iput Anggota Baru"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Button_CircleButton__WEBPACK_IMPORTED_MODULE_3__.default, {
+        className: "btn btn-secondary btn-sm mb-1",
+        onClick: props.hendltoggelInput,
+        children: "x"
+      })]
+    }),
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("form", {
+      onSubmit: hendlsubmit,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+          children: "Nama Lengkap"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
+          type: "text",
+          className: "form-control form-control-sm",
+          name: "name",
+          required: true
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+          children: "Email"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
+          type: "text",
+          className: "form-control form-control-sm",
+          name: "email",
+          required: true
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+          children: "Password"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
+          type: "password",
+          className: "form-control form-control-sm",
+          name: "password",
+          required: true
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+          children: "Jenis Klamin"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("select", {
+          name: "jenis_klamin",
+          className: "form-control form-control-sm",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
+            children: "Laki-Laki"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
+            children: "Perempuan"
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+          children: "Tempat Lahir"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
+          type: "text",
+          className: "form-control form-control-sm",
+          name: "tempat_lahir",
+          required: true
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+          children: "Tanggal Lahir"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
+          type: "date",
+          className: "form-control form-control-sm",
+          name: "tanggal_lahir",
+          required: true
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+          children: "Nomot Telepon"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
+          type: "number",
+          className: "form-control form-control-sm",
+          name: "tlp",
+          required: true
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+          children: "Alamat"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
+          className: "form-control",
+          name: "alamat",
+          rows: "3",
+          required: true
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "form-group",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+          children: "Tahun Masuk"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("select", {
+          className: "form-control form-control-sm",
+          name: "tahun_masuk",
+          required: true,
+          children: getYear().map(function (it, i) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
+              children: it
+            }, i);
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "form-group text-right",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+          onClick: function onClick() {
+            window.location.reload();
+          },
+          className: "btn btn-secondary btn-sm mr-1",
+          children: "Batal"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+          className: "btn btn-primary btn-sm simpan",
+          children: "Simpan"
+        })]
+      })]
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/views/pages/Anggota/Output.jsx":
+/*!*****************************************************!*\
+  !*** ./resources/js/views/pages/Anggota/Output.jsx ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Output)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_paginate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-paginate */ "./node_modules/react-paginate/dist/react-paginate.js");
+/* harmony import */ var react_paginate__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_paginate__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_Card_Card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/Card/Card */ "./resources/js/components/Card/Card.jsx");
+/* harmony import */ var _constant_constant__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../constant/constant */ "./resources/js/constant/constant.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+var JsBarcode = __webpack_require__(/*! jsbarcode */ "./node_modules/jsbarcode/bin/JsBarcode.js");
+
+function Output(props) {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      loading = _useState2[0],
+      setLoading = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      offset = _useState4[0],
+      setOffset = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([]),
+      _useState6 = _slicedToArray(_useState5, 2),
+      data = _useState6[0],
+      setData = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(2),
+      _useState8 = _slicedToArray(_useState7, 1),
+      perPage = _useState8[0];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
+      _useState10 = _slicedToArray(_useState9, 2),
+      pageCount = _useState10[0],
+      setPageCount = _useState10[1];
+
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)("col-lg-12"),
+      _useState12 = _slicedToArray(_useState11, 2),
+      lay = _useState12[0],
+      setLay = _useState12[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
+    setLay(props.classItem);
+    resultData();
+    setLoading(true);
+  }, [props.classItem, lay, offset]);
+
+  var resultData = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      var getData, data, slice, postData;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default().get("".concat(_constant_constant__WEBPACK_IMPORTED_MODULE_5__.base_url, "api/getDataAnggota"));
+
+            case 2:
+              getData = _context.sent;
+              data = getData.data;
+              slice = data.slice(offset, offset + perPage); // JsBarcode("#barcode", number, {
+              //     text: number.match(/.{1,4}/g).join("  "),
+              //     width: 2,
+              //     height: 50,
+              //     fontSize: 15,
+              // });
+
+              postData = slice.map(function (item, i) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                  className: "".concat(lay, " mb-2"),
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Card_Card__WEBPACK_IMPORTED_MODULE_4__.ECard, {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                      className: "container",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                        style: {
+                          display: "flex",
+                          alignItems: "center",
+                          flexDirection: "column"
+                        },
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+                          src: "".concat(_constant_constant__WEBPACK_IMPORTED_MODULE_5__.base_url, "img/User/").concat(item.foto),
+                          width: "100px",
+                          height: "100px"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("strong", {
+                          children: item.name
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("strong", {
+                          children: item.kode_anggota
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                          className: "card w-100 p-1",
+                          style: {
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: "center"
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.NavLink, {
+                            to: "/detailAnggota/".concat(item.kode_anggota),
+                            className: "btn btn-info btn-sm mr-1",
+                            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
+                              className: "las la-eye"
+                            })
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+                            className: "btn btn-success btn-sm",
+                            onClick: function onClick(e) {
+                              props.edit(item);
+                            },
+                            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
+                              className: "las la-edit"
+                            })
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+                            className: "btn btn-danger btn-sm ml-1",
+                            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
+                              className: "las la-trash-alt"
+                            })
+                          })]
+                        })]
+                      })
+                    })
+                  })
+                }, i);
+              });
+              setData(postData);
+              setPageCount(Math.ceil(data.length / perPage));
+              setLoading(false);
+              console.log(offset);
+
+            case 10:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function resultData() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  var handlePageClick = function handlePageClick(e) {
+    var selectedPage = e.selected;
+    setOffset(selectedPage + 1);
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_Card_Card__WEBPACK_IMPORTED_MODULE_4__.ECard, {
+    title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      style: {
+        display: "flex",
+        justifyContent: "space-between"
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h6", {
+        children: "Anggota"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        className: "search-area",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          type: "text",
+          className: "form-control form-control-sm"
+        })
+      })]
+    }),
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      className: "row",
+      children: [loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+        children: "loading..."
+      }) : data, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)((react_paginate__WEBPACK_IMPORTED_MODULE_3___default()), {
+        previousLabel: "prev",
+        nextLabel: "next",
+        breakLabel: "...",
+        breakClassName: "break-me",
+        pageCount: pageCount,
+        marginPagesDisplayed: 2,
+        pageRangeDisplayed: 5,
+        onPageChange: handlePageClick,
+        containerClassName: "pagination",
+        subContainerClassName: "pages pagination",
+        activeClassName: "active"
+      })]
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/views/pages/Login/Login.jsx":
+/*!**************************************************!*\
+  !*** ./resources/js/views/pages/Login/Login.jsx ***!
+  \**************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2884,8 +3783,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _scss_login_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scss/_login.scss */ "./resources/js/views/pages/scss/_login.scss");
-/* harmony import */ var _constant_constant__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../constant/constant */ "./resources/js/constant/constant.js");
+/* harmony import */ var _scss_login_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scss/_login.scss */ "./resources/js/views/pages/Login/scss/_login.scss");
+/* harmony import */ var _constant_constant__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../constant/constant */ "./resources/js/constant/constant.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -3147,6 +4046,16 @@ function componentName() {
       useScann = _useState22[0],
       setScann = _useState22[1];
 
+  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState24 = _slicedToArray(_useState23, 2),
+      formSearch = _useState24[0],
+      setFormSearch = _useState24[1];
+
+  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
+      _useState26 = _slicedToArray(_useState25, 2),
+      search = _useState26[0],
+      setSearch = _useState26[1];
+
   var hendltoggel = function hendltoggel() {
     jquery__WEBPACK_IMPORTED_MODULE_4___default()(".inp").hide();
     jquery__WEBPACK_IMPORTED_MODULE_4___default()(".tbl").removeClass("col-lg-6");
@@ -3274,15 +4183,16 @@ function componentName() {
 
   var getListData = /*#__PURE__*/function () {
     var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
-      var get, data, slice, postData;
+      var params, get, data, slice, postData;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
         while (1) {
           switch (_context3.prev = _context3.next) {
             case 0:
-              _context3.next = 2;
-              return axios__WEBPACK_IMPORTED_MODULE_5___default().get(baseUrl + "api/getdataBuku");
+              params = search != null ? "/" + search : "";
+              _context3.next = 3;
+              return axios__WEBPACK_IMPORTED_MODULE_5___default().get(baseUrl + "api/getdataBuku" + params);
 
-            case 2:
+            case 3:
               get = _context3.sent;
               setListdata(get.data); // ///////////////////////////////////////////////
 
@@ -3308,14 +4218,15 @@ function componentName() {
                     },
                     className: "mb-2",
                     image: baseUrl + "img/Buku/" + item.image,
-                    title: item.judul_buku
+                    title: item.judul_buku,
+                    Kategori: item.Kategori
                   })
                 }, i);
               });
               setData(postData);
               setPageCount(Math.ceil(data.length / perPage));
 
-            case 9:
+            case 10:
             case "end":
               return _context3.stop();
           }
@@ -3389,12 +4300,13 @@ function componentName() {
   var handlePageClick = function handlePageClick(e) {
     var selectedPage = e.selected;
     setOffset(selectedPage + 1);
-  };
+  }; // use Efect
+
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    JsBarcode("#barcode").init();
     getListData();
-  }, [offset], []);
+    JsBarcode("#barcode").init();
+  }, [offset]);
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     jquery__WEBPACK_IMPORTED_MODULE_4___default()(".modal-barcode").hide();
 
@@ -3407,23 +4319,64 @@ function componentName() {
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     jquery__WEBPACK_IMPORTED_MODULE_4___default()(".inp").hide();
   }, []);
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    getListData();
+  }, [search]); // ////////////////////////////////
 
   var getValScann = function getValScann(data) {
-    setKode(data);
-    jquery__WEBPACK_IMPORTED_MODULE_4___default()("#kode").attr("readonly", true);
-    jquery__WEBPACK_IMPORTED_MODULE_4___default()(".genBar").attr("disabled", true);
-    hendlInp();
+    if (formSearch) {
+      setSearch(data);
+      jquery__WEBPACK_IMPORTED_MODULE_4___default()("#search").val(data);
+    } else {
+      setKode(data);
+      jquery__WEBPACK_IMPORTED_MODULE_4___default()("#kode").attr("readonly", true);
+      jquery__WEBPACK_IMPORTED_MODULE_4___default()(".genBar").attr("disabled", true);
+      hendlInp();
+    }
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
     className: "row",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
       className: "col-lg-12 mb-3",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("button", {
+      style: {
+        display: "flex",
+        justifyContent: "space-between"
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("button", {
         className: "btn btn-primary btn-sm",
         onClick: hendlInp,
         children: "Input Buku"
-      })
+      }), formSearch ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+        className: "search-area",
+        style: {
+          display: "flex"
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
+          type: "text",
+          className: "form-control form-control-sm",
+          placeholder: "search",
+          id: "search",
+          onChange: function onChange(e) {
+            setSearch(e.target.value);
+          }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_Button_CircleButton__WEBPACK_IMPORTED_MODULE_3__.default, {
+          className: "btn btn-info btn-sm mb-1 btn-close-search",
+          onClick: function onClick() {
+            setFormSearch(false);
+            setSearch(null);
+          },
+          children: "x"
+        })]
+      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_Button_CircleButton__WEBPACK_IMPORTED_MODULE_3__.default, {
+        className: "btn btn-info btn-sm mb-1",
+        onClick: function onClick() {
+          setFormSearch(true);
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("i", {
+          className: "fa fa-search"
+        })
+      })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
       className: "col-lg-6 mb-1 inp",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_Card_Card__WEBPACK_IMPORTED_MODULE_2__.ECard, {
@@ -3603,8 +4556,27 @@ function componentName() {
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
       className: "col-lg-12 mb-1 tbl",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_Card_Card__WEBPACK_IMPORTED_MODULE_2__.ECard, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(_components_Card_Card__WEBPACK_IMPORTED_MODULE_2__.ECard, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+          className: "row",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+            className: "col-md-6",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+              className: "form-group",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("input", {
+                type: "text",
+                className: "form-control form-control-sm"
+              })
+            })
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+          className: "mb-2",
+          children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("strong", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("i", {
+              className: "fa fa-user"
+            }), "Semua Kategori"]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
           className: "row",
           children: [data, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)((react_paginate__WEBPACK_IMPORTED_MODULE_10___default()), {
             previousLabel: "prev",
@@ -3619,7 +4591,7 @@ function componentName() {
             subContainerClassName: "pages pagination",
             activeClassName: "active"
           })]
-        })
+        })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
       className: "modal fade",
@@ -3726,6 +4698,17 @@ function DataBuku(props) {
             fontWeight: "bold"
           },
           children: props.title
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("small", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("strong", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
+                className: "fa fa-label"
+              }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                "class": "badge badge-dark",
+                children: props.Kategori
+              })]
+            })
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "",
           children: [props.onView, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
@@ -3764,7 +4747,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _components_Card_Ecard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/Card/Ecard */ "./resources/js/components/Card/Ecard.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _constant_constant__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../constant/constant */ "./resources/js/constant/constant.js");
@@ -3773,6 +4755,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./style.scss */ "./resources/js/views/pages/Page-Buku/style.scss");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -4091,6 +5074,896 @@ var ScannerComponent = /*#__PURE__*/function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_1__.Component);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ScannerComponent);
+
+/***/ }),
+
+/***/ "./resources/js/views/pages/Peminjaman/Barcode.jsx":
+/*!*********************************************************!*\
+  !*** ./resources/js/views/pages/Peminjaman/Barcode.jsx ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Barcode)
+/* harmony export */ });
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_barcode_reader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-barcode-reader */ "./node_modules/react-barcode-reader/lib/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+
+var Barcode = /*#__PURE__*/function (_Component) {
+  _inherits(Barcode, _Component);
+
+  var _super = _createSuper(Barcode);
+
+  function Barcode(props) {
+    var _this;
+
+    _classCallCheck(this, Barcode);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      result: "No result"
+    };
+    _this.handleScan = _this.handleScan.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(Barcode, [{
+    key: "handleScan",
+    value: function handleScan(data) {
+      console.log(data);
+    }
+  }, {
+    key: "handleError",
+    value: function handleError(err) {
+      console.error(err);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_barcode_reader__WEBPACK_IMPORTED_MODULE_2__.default, {
+          onError: this.handleError,
+          onScan: this.handleScan
+        })
+      });
+    }
+  }]);
+
+  return Barcode;
+}(react__WEBPACK_IMPORTED_MODULE_1__.Component);
+
+
+
+/***/ }),
+
+/***/ "./resources/js/views/pages/Peminjaman/PagePeminjaman.jsx":
+/*!****************************************************************!*\
+  !*** ./resources/js/views/pages/Peminjaman/PagePeminjaman.jsx ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ PagePeminjaman)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _components_Card_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Card/Card */ "./resources/js/components/Card/Card.jsx");
+/* harmony import */ var _constant_constant__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../constant/constant */ "./resources/js/constant/constant.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_barcode_reader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-barcode-reader */ "./node_modules/react-barcode-reader/lib/index.js");
+/* harmony import */ var _Barcode__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Barcode */ "./resources/js/views/pages/Peminjaman/Barcode.jsx");
+/* harmony import */ var _components_Button_CircleButton__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../components/Button/CircleButton */ "./resources/js/components/Button/CircleButton.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+function PagePeminjaman(props) {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      data = _useState2[0],
+      setData = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      loading = _useState4[0],
+      setLoading = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(null),
+      _useState6 = _slicedToArray(_useState5, 2),
+      kode_a = _useState6[0],
+      setKode_a = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([]),
+      _useState8 = _slicedToArray(_useState7, 2),
+      msg = _useState8[0],
+      setMsg = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false),
+      _useState10 = _slicedToArray(_useState9, 2),
+      validate = _useState10[0],
+      setValidate = _useState10[1];
+
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
+      _useState12 = _slicedToArray(_useState11, 2),
+      switPage = _useState12[0],
+      setSwitchPage = _useState12[1];
+
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)({
+    tanggal_pinjam: null,
+    lama_pinjam: null,
+    detail: null
+  }),
+      _useState14 = _slicedToArray(_useState13, 2),
+      createP = _useState14[0],
+      setCreateP = _useState14[1];
+
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([]),
+      _useState16 = _slicedToArray(_useState15, 2),
+      dataBuku = _useState16[0],
+      setDataBuku = _useState16[1];
+
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)({
+    status: false,
+    msg: ""
+  }),
+      _useState18 = _slicedToArray(_useState17, 2),
+      swicingDataChecker = _useState18[0],
+      setSwicingDataChecker = _useState18[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
+    anggota(props.kode_anggota);
+    chceckPinjaman(props.kode_anggota);
+  }, [props.kode_anggota]);
+
+  var loadingPage = function loadingPage() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+      children: "loading..."
+    });
+  };
+
+  var anggota = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(kode_anggota) {
+      var get;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default().get(_constant_constant__WEBPACK_IMPORTED_MODULE_4__.base_url + "api/getDataAnggotaById/" + kode_anggota);
+
+            case 2:
+              get = _context.sent;
+              setData(get.data);
+
+            case 4:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function anggota(_x) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  var chceckPinjaman = function chceckPinjaman(kode) {
+    setLoading(true);
+
+    var getCek = /*#__PURE__*/function () {
+      var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(k) {
+        var get;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().get(_constant_constant__WEBPACK_IMPORTED_MODULE_4__.base_url + "api/checkPinjaman/" + k);
+
+              case 2:
+                get = _context2.sent;
+                console.log(get);
+
+                if (get.data > 0) {
+                  setMsg( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+                      children: "Masih ada pinjaman yang belum di kembalikan"
+                    })
+                  }));
+                  setValidate(false);
+                } else {
+                  setValidate(true);
+                }
+
+                setLoading(false);
+
+              case 6:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }));
+
+      return function getCek(_x2) {
+        return _ref2.apply(this, arguments);
+      };
+    }();
+
+    getCek(kode);
+  };
+
+  var validatefalse = function validatefalse() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Card_Card__WEBPACK_IMPORTED_MODULE_3__.ECard, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Card_Card__WEBPACK_IMPORTED_MODULE_3__.ECardMsg, {
+          className: "msg-danger",
+          children: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque ad error suscipit animi expedita a sunt accusantium, ut quis aliquid eligendi facilis et accusamus nobis consequatur. Facere laboriosam natus neque."
+        })
+      })
+    });
+  };
+
+  var pagePeminjaman = function pagePeminjaman() {
+    var getBookByKode = /*#__PURE__*/function () {
+      var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3(kode) {
+        var get, objk;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().get(_constant_constant__WEBPACK_IMPORTED_MODULE_4__.base_url + "api/getBukuByKodeBuku/" + kode);
+
+              case 2:
+                get = _context3.sent;
+
+                if (get.data.count > 0) {
+                  if (dataBuku.length == 0) {
+                    setDataBuku([get.data.result]);
+                  } else {
+                    objk = [];
+                    dataBuku.map(function (it) {
+                      if (get.data.result.kode_buku != it.kode_buku) {
+                        objk.push(it);
+                      } else {
+                        setSwicingDataChecker({
+                          status: true,
+                          msg: "buku tlah di scann...!"
+                        });
+                      }
+                    });
+                    objk.push(get.data.result);
+                    setDataBuku(objk);
+                  }
+
+                  setSwicingDataChecker({
+                    status: false,
+                    msg: ""
+                  });
+                } else {
+                  setSwicingDataChecker({
+                    status: true,
+                    msg: "buku blum di entry ...!"
+                  });
+                } // console.log(get.data.count);
+
+
+              case 4:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }));
+
+      return function getBookByKode(_x3) {
+        return _ref3.apply(this, arguments);
+      };
+    }();
+
+    var hendlNext = function hendlNext(event) {
+      setSwitchPage(1);
+      event.preventDefault();
+      var form_data = new FormData(event.target);
+      var obj = {};
+
+      var _iterator = _createForOfIteratorHelper(form_data.entries()),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var pair = _step.value;
+          obj[pair[0]] = pair[1];
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+
+      setCreateP(obj);
+    };
+
+    var hendlTroli = function hendlTroli(e) {
+      getBookByKode(e.target.value);
+    };
+
+    var FormCreate = function FormCreate() {
+      jquery__WEBPACK_IMPORTED_MODULE_5___default()("[name='tanggal_pinjam']").val(createP.tanggal_pinjam != null ? createP.tanggal_pinjam : "");
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Card_Card__WEBPACK_IMPORTED_MODULE_3__.ECard, {
+        title: "Form Peminjaman Baru",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("form", {
+          onSubmit: hendlNext,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+              children: "Tanggal Pinjam"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
+              type: "date",
+              name: "tanggal_pinjam",
+              className: "form-control from-control-sm"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+              children: "Lama Pinjam"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("select", {
+              name: "lama_pinjam",
+              className: "form-control from-control-sm",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
+                value: "1",
+                children: "1 Hari"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
+                value: "2",
+                children: "2 Hari"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
+                value: "3",
+                children: "3 Hari"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
+                value: "4",
+                children: "4 Hari"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
+                value: "5",
+                children: "5 Hari"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
+                value: "6",
+                children: "6 Hari"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
+                value: "7",
+                children: "7 Hari"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
+                value: "8",
+                children: "8 Hari"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
+                value: "9",
+                children: "9 Hari"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
+                value: "10",
+                children: "10 Hari"
+              })]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            className: "form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+              htmlFor: "ket",
+              children: "Keterangan"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
+              id: "ket",
+              className: "form-control",
+              name: "detail",
+              rows: "2"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+            className: "form-group text-right",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+              className: "btn btn-primary btn-sm",
+              children: "Next"
+            })
+          })]
+        })
+      });
+    };
+
+    var handleScan = function handleScan(data) {
+      jquery__WEBPACK_IMPORTED_MODULE_5___default()("#kodeBarcode").val(data);
+      getBookByKode(data);
+    };
+
+    var handleError = function handleError(err) {
+      console.error(err);
+    }; // simpan//
+
+
+    var hendlUpSave = function hendlUpSave() {
+      var dataResult = {
+        pinjaman: createP,
+        troli_pinjaman: dataBuku,
+        member: data
+      };
+      console.log(dataResult);
+    }; // ------
+
+
+    var FormAddBook = function FormAddBook() {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_components_Card_Card__WEBPACK_IMPORTED_MODULE_3__.ECard, {
+        title: "Form Peminjaman Baru",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          className: "form-group",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+            style: {
+              fontSize: 9,
+              color: "green"
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
+              children: "jika kode isbn tidak tersedia di database silahkan entry buku dulu"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
+            id: "kodeBarcode",
+            type: "text",
+            className: "form-control form-control-sm",
+            placeholder: "input / scann barcode buku",
+            onChange: hendlTroli
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_barcode_reader__WEBPACK_IMPORTED_MODULE_6__.default, {
+            onError: handleError,
+            onScan: handleScan
+          }), swicingDataChecker.status && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Card_Card__WEBPACK_IMPORTED_MODULE_3__.ECardMsg, {
+            className: "mt-2",
+            children: swicingDataChecker.msg
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("table", {
+            className: "table",
+            style: {
+              fontSize: 10
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("thead", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                  children: "No"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                  children: "Judul buku"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                  children: "Kategori"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                  children: "Pengarang"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("th", {
+                  children: "Action"
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("tbody", {
+              children: dataBuku.map(function (items, i) {
+                var io = i + 1;
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("tr", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("td", {
+                    children: io
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("td", {
+                    children: items.judul_buku
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("td", {
+                    children: items.Kategori
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("td", {
+                    children: items.pengarang
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("td", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Button_CircleButton__WEBPACK_IMPORTED_MODULE_8__.default, {
+                      className: "btn btn-danger btn-sm mb-1",
+                      onClick: function onClick() {},
+                      children: "x"
+                    })
+                  })]
+                }, i);
+              })
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          className: "form-group text-right",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+            className: "btn btn-secondary btn-sm mr-1 ml-1",
+            onClick: function onClick() {
+              setSwitchPage(0);
+            },
+            children: "Back"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+            className: "btn btn-primary btn-sm",
+            onClick: hendlUpSave,
+            children: "Next"
+          })]
+        })]
+      });
+    };
+
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Card_Card__WEBPACK_IMPORTED_MODULE_3__.ECard, {
+        children: switPage == 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(FormCreate, {}) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(FormAddBook, {})
+      })
+    });
+  };
+
+  var HistoryPeminjaman = function HistoryPeminjaman() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Card_Card__WEBPACK_IMPORTED_MODULE_3__.ECard, {
+      className: "mt-1",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+        children: "Histori Peminjaman"
+      })
+    });
+  };
+
+  var UserPage = function UserPage() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Card_Card__WEBPACK_IMPORTED_MODULE_3__.ECard, {
+      style: {
+        fontSize: 12
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "container",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          style: {
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "column"
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
+            src: "".concat(_constant_constant__WEBPACK_IMPORTED_MODULE_4__.base_url, "img/User/").concat(data.foto),
+            width: "100px",
+            height: "100px"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("strong", {
+            children: data.name
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("strong", {
+            children: data.kode_anggota
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          className: "mt-2",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            style: styleReference,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("strong", {
+              children: "Jenis Klamin"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+              style: {
+                marginBottom: 0
+              },
+              children: data.jenis_klamin
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            style: styleReference,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("strong", {
+              children: "Tempat Tanggal Lahir"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+              style: {
+                marginBottom: 0
+              },
+              children: data.tempat_lahir + " " + data.tanggal_lahir
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            style: styleReference,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("strong", {
+              children: "No Telepon"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+              style: {
+                marginBottom: 0
+              },
+              children: data.tlp
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            style: styleReference,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("strong", {
+              children: "Alamat"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+              style: {
+                marginBottom: 0
+              },
+              children: data.alamat
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            style: styleReference,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("strong", {
+              children: "Thun Masuk"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+              style: {
+                marginBottom: 0
+              },
+              children: data.tahun_masuk
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            style: styleReference,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("strong", {
+              children: "Jadi Anggota Pada Tanggal"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
+              style: {
+                marginBottom: 0
+              },
+              children: data.created_at
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("hr", {})]
+        })]
+      })
+    });
+  };
+
+  return loading ? loadingPage() : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+    className: "container",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+      className: "row",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+        className: "col-md-5",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(UserPage, {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "col-md-7",
+        children: [validate ? pagePeminjaman() : validatefalse(), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(HistoryPeminjaman, {})]
+      })]
+    })
+  });
+}
+var styleReference = {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  marginTop: "1rem"
+};
+
+/***/ }),
+
+/***/ "./resources/js/views/pages/Peminjaman/Peminjaman.jsx":
+/*!************************************************************!*\
+  !*** ./resources/js/views/pages/Peminjaman/Peminjaman.jsx ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Peminjaman)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _components_Card_Ecard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/Card/Ecard */ "./resources/js/components/Card/Ecard.jsx");
+/* harmony import */ var _constant_constant__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../constant/constant */ "./resources/js/constant/constant.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./style.scss */ "./resources/js/views/pages/Peminjaman/style.scss");
+/* harmony import */ var _PagePeminjaman__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./PagePeminjaman */ "./resources/js/views/pages/Peminjaman/PagePeminjaman.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+function Peminjaman() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      loading = _useState2[0],
+      setLoading = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      itmLoading = _useState4[0],
+      setItemLoading = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([]),
+      _useState6 = _slicedToArray(_useState5, 2),
+      dataSearch = _useState6[0],
+      setdataSearch = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
+      _useState8 = _slicedToArray(_useState7, 2),
+      page = _useState8[0],
+      setPage = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(null),
+      _useState10 = _slicedToArray(_useState9, 2),
+      kode = _useState10[0],
+      setKode = _useState10[1];
+
+  var hendelOnchangeSearch = function hendelOnchangeSearch(e) {
+    setItemLoading(true);
+
+    var searchdata = /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(evn) {
+        var get;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().get(_constant_constant__WEBPACK_IMPORTED_MODULE_4__.base_url + "api/searchAnggota/" + evn);
+
+              case 2:
+                get = _context.sent;
+
+                if (evn == "") {
+                  setdataSearch([]);
+                  setItemLoading(false);
+                } else {
+                  setdataSearch(get.data);
+                  setItemLoading(false);
+                  console.log(get.data.length);
+                }
+
+              case 4:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function searchdata(_x) {
+        return _ref.apply(this, arguments);
+      };
+    }();
+
+    searchdata(e.target.value);
+  };
+
+  var loadingPage = function loadingPage() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+      children: "Loading..."
+    });
+  };
+
+  var itmLoadingPage = function itmLoadingPage() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+      children: "Loading..."
+    });
+  };
+
+  var hendlListSearch = function hendlListSearch(kode_) {
+    setPage(1);
+    setKode(kode_);
+  };
+
+  var pageInputAnggota = function pageInputAnggota() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      className: "container",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "row",
+        style: {
+          marginTop: 30
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          className: "col-lg-3"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          className: "col-lg-6",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_components_Card_Ecard__WEBPACK_IMPORTED_MODULE_3__.default, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+              className: "form-group",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                type: "text",
+                className: "form-control",
+                onChange: hendelOnchangeSearch,
+                placeholder: "input kode / Scann Isbn / nama anggota pustaka"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("hr", {}), itmLoading ? itmLoadingPage() : dataSearch.map(function (items, i) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Card_Ecard__WEBPACK_IMPORTED_MODULE_3__.default, {
+                className: "mb-1 itm-anggota",
+                onClick: function onClick() {
+                  hendlListSearch(items.kode_anggota);
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  style: {
+                    display: "flex"
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+                    style: {
+                      width: 50,
+                      height: 50,
+                      borderRadius: "50%"
+                    },
+                    src: "".concat(_constant_constant__WEBPACK_IMPORTED_MODULE_4__.base_url, "img/User/").concat(items.foto)
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                    className: "ml-2",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                      children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+                        children: items.nama
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("small", {
+                        children: items.kode_anggota
+                      })
+                    })]
+                  })]
+                })
+              }, i);
+            })]
+          })
+        })]
+      })
+    });
+  };
+
+  var pagePeminjaman = function pagePeminjaman() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_PagePeminjaman__WEBPACK_IMPORTED_MODULE_6__.default, {
+        kode_anggota: kode
+      })
+    });
+  };
+
+  return loading ? loadingPage() : page == 0 ? pageInputAnggota() : pagePeminjaman();
+}
 
 /***/ }),
 
@@ -8614,7 +10487,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".e-card {\n  width: 100%;\n  background-color: #fff;\n  border-radius: 5px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n}\n.e-card .e-card-title {\n  padding: 10px;\n}\n.e-card .e-card-title div {\n  border-bottom: 1px solid #e0dfdf;\n}\n.e-card .e-card-body {\n  padding: 20px;\n}\n\n#CardTable .header {\n  display: flex;\n  justify-content: space-between;\n}\n#CardTable .header .btn-circle {\n  border-radius: 50%;\n  width: 30px;\n  height: 30px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  color: #fff;\n}\n#CardTable .header .right {\n  display: flex;\n  align-items: center;\n}\n#CardTable .detail {\n  margin-top: 10px;\n  height: auto !important;\n  overflow: hidden;\n  transition: all 350ms cubic-bezier(0.42, 0, 0.58, 1);\n}\n\n#ECardMsg {\n  width: 100%;\n  padding: 5px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 5px 1px;\n  margin-top: 5px;\n  margin-bottom: 5px;\n  border-left: 5px solid orange;\n  font-family: Arial, Helvetica, sans-serif;\n  font-size: 0.8em;\n  color: #5a5a5a;\n}\n#ECardMsg * {\n  margin: 0;\n  padding: 0;\n}\n#ECardMsg .title {\n  border-bottom: 1px solid #ddd;\n}\n#ECardMsg .ECardMsg-child {\n  width: 100%;\n  padding-left: 5px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".e-card {\n  width: 100%;\n  background-color: #fff;\n  border-radius: 5px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;\n}\n.e-card .e-card-title {\n  padding: 10px;\n}\n.e-card .e-card-title div {\n  border-bottom: 1px solid #e0dfdf;\n}\n.e-card .e-card-body {\n  padding: 20px;\n}\n\n#CardTable .header {\n  display: flex;\n  justify-content: space-between;\n}\n#CardTable .header .btn-circle {\n  border-radius: 50%;\n  width: 30px;\n  height: 30px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  color: #fff;\n}\n#CardTable .header .right {\n  display: flex;\n  align-items: center;\n}\n#CardTable .detail {\n  margin-top: 10px;\n  height: auto !important;\n  overflow: hidden;\n  transition: all 350ms cubic-bezier(0.42, 0, 0.58, 1);\n}\n\n#ECardMsg {\n  width: 100%;\n  padding: 5px;\n  box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 5px 1px;\n  margin-top: 5px;\n  margin-bottom: 5px;\n  border-left: 5px solid orange;\n  font-family: Arial, Helvetica, sans-serif;\n  font-size: 0.8em;\n  color: #5a5a5a;\n}\n#ECardMsg * {\n  margin: 0;\n  padding: 0;\n}\n#ECardMsg .title {\n  border-bottom: 1px solid #ddd;\n}\n#ECardMsg .ECardMsg-child {\n  width: 100%;\n  padding-left: 5px;\n}\n\n.msg-danger {\n  border-left: 5px solid #bb1919 !important;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -8645,6 +10518,30 @@ ___CSS_LOADER_EXPORT___.push([module.id, ":root {\n  --main-primary: #219EBC;\n 
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/js/views/pages/Login/scss/_login.scss":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/js/views/pages/Login/scss/_login.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".login-box {\n  margin-top: 75px;\n  height: auto;\n  background: #1A2226;\n  text-align: center;\n  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);\n}\n\n.login-key {\n  height: 100px;\n  font-size: 80px;\n  line-height: 100px;\n  background: -webkit-linear-gradient(#27EF9F, #0DB8DE);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n}\n\n.login-title {\n  margin-top: 15px;\n  text-align: center;\n  font-size: 30px;\n  letter-spacing: 2px;\n  margin-top: 15px;\n  font-weight: bold;\n  color: #ECF0F5;\n}\n\n.login-form {\n  margin-top: 25px;\n  text-align: left;\n}\n\n.logInp {\n  background-color: #1A2226;\n  border: none;\n  border-bottom: 2px solid #0DB8DE;\n  border-top: 0px;\n  border-radius: 0px;\n  font-weight: bold;\n  outline: 0;\n  margin-bottom: 20px;\n  padding-left: 0px;\n  color: #ECF0F5;\n}\n\n.logPass {\n  background-color: #1A2226;\n  border: none;\n  border-bottom: 2px solid #0DB8DE;\n  border-top: 0px;\n  border-radius: 0px;\n  font-weight: bold;\n  outline: 0;\n  padding-left: 0px;\n  margin-bottom: 20px;\n  color: #ECF0F5;\n}\n\n.form-group-log {\n  margin-bottom: 40px;\n  outline: 0px;\n}\n\n.form-control_log:focus {\n  border-color: inherit;\n  box-shadow: none;\n  border-bottom: 2px solid #0DB8DE;\n  outline: 0;\n  background-color: #1A2226;\n  color: #ECF0F5;\n}\n\n.inp:focus {\n  outline: none;\n  box-shadow: 0 0 0;\n}\n\nlabel {\n  margin-bottom: 0px;\n}\n\n.form-control-label {\n  font-size: 10px;\n  color: #6C6C6C;\n  font-weight: bold;\n  letter-spacing: 1px;\n}\n\n.btn-outline-primary {\n  border-color: #0DB8DE;\n  color: #0DB8DE;\n  border-radius: 0px;\n  font-weight: bold;\n  letter-spacing: 1px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n}\n\n.btn-outline-primary:hover {\n  background-color: #0DB8DE;\n  right: 0px;\n}\n\n.login-btm {\n  float: left;\n}\n\n.login-button {\n  padding-right: 0px;\n  text-align: right;\n  margin-bottom: 25px;\n}\n\n.login-text {\n  text-align: left;\n  padding-left: 0px;\n  color: #A2A4A4;\n}\n\n.loginbttm {\n  padding: 0px;\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/js/views/pages/Page-Buku/style.scss":
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/js/views/pages/Page-Buku/style.scss ***!
@@ -8662,17 +10559,17 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".root-tbl-buku {\n  width: 100%;\n  display: flex;\n  height: 100px;\n}\n.root-tbl-buku .itemLeft {\n  width: 100px;\n}\n.root-tbl-buku .itemCenter {\n  flex-grow: 2;\n  margin-left: 10px;\n}\n\n.wd-100 {\n  width: 100%;\n}\n\n.wd-40 {\n  width: 30%;\n}\n\n.wd-1 {\n  width: 1%;\n}\n\n.wd-60 {\n  width: 70%;\n}\n\n.pagination {\n  margin: 15px auto;\n  display: flex;\n  list-style: none;\n  outline: none;\n}\n\n.pagination > .active > a {\n  background-color: #47ccde;\n  border-color: #47ccde;\n  color: #fff;\n}\n\n.pagination > li > a {\n  border: 1px solid #47ccde;\n  padding: 5px 10px;\n  outline: none;\n  cursor: pointer;\n}\n\n.pagination > .active > a,\n.pagination > .active > span,\n.pagination > .active > a:hover,\n.pagination > .active > span:hover,\n.pagination > .active > a:focus,\n.pagination > .active > span:focus {\n  background-color: #47ccde;\n  border-color: #47ccde;\n  outline: none;\n}\n\n.pagination > li > a,\n.pagination > li > span {\n  color: #47ccde;\n}\n\n.pagination > li:first-child > a,\n.pagination > li:first-child > span,\n.pagination > li:last-child > a,\n.pagination > li:last-child > span {\n  border-radius: unset;\n}\n\n._wd-100 {\n  width: 100% !important;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".root-tbl-buku {\n  width: 100%;\n  display: flex;\n  height: 100px;\n}\n.root-tbl-buku .itemLeft {\n  width: 100px;\n}\n.root-tbl-buku .itemCenter {\n  flex-grow: 2;\n  margin-left: 10px;\n}\n\n.wd-100 {\n  width: 100%;\n}\n\n.wd-40 {\n  width: 30%;\n}\n\n.wd-1 {\n  width: 1%;\n}\n\n.wd-60 {\n  width: 70%;\n}\n\n.pagination {\n  margin: 15px auto;\n  display: flex;\n  list-style: none;\n  outline: none;\n}\n\n.pagination > .active > a {\n  background-color: #47ccde;\n  border-color: #47ccde;\n  color: #fff;\n}\n\n.pagination > li > a {\n  border: 1px solid #47ccde;\n  padding: 5px 10px;\n  outline: none;\n  cursor: pointer;\n}\n\n.pagination > .active > a,\n.pagination > .active > span,\n.pagination > .active > a:hover,\n.pagination > .active > span:hover,\n.pagination > .active > a:focus,\n.pagination > .active > span:focus {\n  background-color: #47ccde;\n  border-color: #47ccde;\n  outline: none;\n}\n\n.pagination > li > a,\n.pagination > li > span {\n  color: #47ccde;\n}\n\n.pagination > li:first-child > a,\n.pagination > li:first-child > span,\n.pagination > li:last-child > a,\n.pagination > li:last-child > span {\n  border-radius: unset;\n}\n\n.btn-close-search {\n  position: relative;\n  margin-left: -25px;\n  background-color: transparent;\n  margin-top: 2px;\n  color: gray;\n  border: none;\n}\n.btn-close-search:hover {\n  color: red;\n}\n\n._wd-100 {\n  width: 100% !important;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/js/views/pages/scss/_login.scss":
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/js/views/pages/scss/_login.scss ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/js/views/pages/Peminjaman/style.scss":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/js/views/pages/Peminjaman/style.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -8686,7 +10583,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".login-box {\n  margin-top: 75px;\n  height: auto;\n  background: #1A2226;\n  text-align: center;\n  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);\n}\n\n.login-key {\n  height: 100px;\n  font-size: 80px;\n  line-height: 100px;\n  background: -webkit-linear-gradient(#27EF9F, #0DB8DE);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n}\n\n.login-title {\n  margin-top: 15px;\n  text-align: center;\n  font-size: 30px;\n  letter-spacing: 2px;\n  margin-top: 15px;\n  font-weight: bold;\n  color: #ECF0F5;\n}\n\n.login-form {\n  margin-top: 25px;\n  text-align: left;\n}\n\n.logInp {\n  background-color: #1A2226;\n  border: none;\n  border-bottom: 2px solid #0DB8DE;\n  border-top: 0px;\n  border-radius: 0px;\n  font-weight: bold;\n  outline: 0;\n  margin-bottom: 20px;\n  padding-left: 0px;\n  color: #ECF0F5;\n}\n\n.logPass {\n  background-color: #1A2226;\n  border: none;\n  border-bottom: 2px solid #0DB8DE;\n  border-top: 0px;\n  border-radius: 0px;\n  font-weight: bold;\n  outline: 0;\n  padding-left: 0px;\n  margin-bottom: 20px;\n  color: #ECF0F5;\n}\n\n.form-group-log {\n  margin-bottom: 40px;\n  outline: 0px;\n}\n\n.form-control_log:focus {\n  border-color: inherit;\n  box-shadow: none;\n  border-bottom: 2px solid #0DB8DE;\n  outline: 0;\n  background-color: #1A2226;\n  color: #ECF0F5;\n}\n\n.inp:focus {\n  outline: none;\n  box-shadow: 0 0 0;\n}\n\nlabel {\n  margin-bottom: 0px;\n}\n\n.form-control-label {\n  font-size: 10px;\n  color: #6C6C6C;\n  font-weight: bold;\n  letter-spacing: 1px;\n}\n\n.btn-outline-primary {\n  border-color: #0DB8DE;\n  color: #0DB8DE;\n  border-radius: 0px;\n  font-weight: bold;\n  letter-spacing: 1px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n}\n\n.btn-outline-primary:hover {\n  background-color: #0DB8DE;\n  right: 0px;\n}\n\n.login-btm {\n  float: left;\n}\n\n.login-button {\n  padding-right: 0px;\n  text-align: right;\n  margin-bottom: 25px;\n}\n\n.login-text {\n  text-align: left;\n  padding-left: 0px;\n  color: #A2A4A4;\n}\n\n.loginbttm {\n  padding: 0px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".itm-anggota {\n  cursor: pointer;\n}\n.itm-anggota:hover {\n  background-color: #ddd;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -99484,6 +101381,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./resources/js/views/pages/Login/scss/_login.scss":
+/*!*********************************************************!*\
+  !*** ./resources/js/views/pages/Login/scss/_login.scss ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_login_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!../../../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./_login.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/js/views/pages/Login/scss/_login.scss");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_login_scss__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_login_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
 /***/ "./resources/js/views/pages/Page-Buku/style.scss":
 /*!*******************************************************!*\
   !*** ./resources/js/views/pages/Page-Buku/style.scss ***!
@@ -99514,10 +101441,10 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./resources/js/views/pages/scss/_login.scss":
-/*!***************************************************!*\
-  !*** ./resources/js/views/pages/scss/_login.scss ***!
-  \***************************************************/
+/***/ "./resources/js/views/pages/Peminjaman/style.scss":
+/*!********************************************************!*\
+  !*** ./resources/js/views/pages/Peminjaman/style.scss ***!
+  \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -99527,7 +101454,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_login_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!../../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./_login.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/js/views/pages/scss/_login.scss");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!../../../../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./style.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/js/views/pages/Peminjaman/style.scss");
 
             
 
@@ -99536,11 +101463,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_login_scss__WEBPACK_IMPORTED_MODULE_1__.default, options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_style_scss__WEBPACK_IMPORTED_MODULE_1__.default, options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_login_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_style_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 

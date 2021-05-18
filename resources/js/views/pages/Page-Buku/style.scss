@@ -121,4 +121,16 @@
     border-radius: unset
 }
 
+.btn-close-search {
+    position: relative;
+    margin-left: -25px;
+    background-color: transparent;
+    margin-top: 2px;
+    color: gray;
+    border: none;
+    &:hover {
+        color: red;
+    }
+}
+
 @include class-x('wd', 100);

@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from "react";
 import ECard from "../../../components/Card/Ecard";
-import { useLocation } from "react-router";
 import axios from "axios";
 import { base_url } from "../../../constant/constant";
 import Swal from "sweetalert2";
 import $ from "jquery";
 import "./style.scss";
+import { useLocation } from "react-router";
 import { useHistory } from "react-router-dom";
 var JsBarcode = require("jsbarcode");
 const swal = () => {
@@ -82,7 +82,7 @@ export default function DeskripsiBuku(props) {
                                 src={base_url + "img/Buku/" + getData.image}
                                 className="w-100"
                             />
-                            <hr/>
+                            <hr />
                             <strong>Barcode</strong>
                             <svg
                                 color="#000"

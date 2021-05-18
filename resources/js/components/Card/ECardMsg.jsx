@@ -6,7 +6,7 @@ export default class ECardMsg extends Component {
     }
     render() {
         return (
-            <div id="ECardMsg" style={this.props.style}>
+            <div id="ECardMsg" style={this.props.style} className={this.props.className}>
                 <span className="title" style={this.props.titleStyle}>{this.props.title}</span>
                 <div className="ECardMsg-child" style={this.props.childStyle}>
                     {this.props.children}

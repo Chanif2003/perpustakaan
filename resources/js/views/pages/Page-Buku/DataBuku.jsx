@@ -24,6 +24,16 @@ export default function DataBuku(props) {
                     >
                         {props.title}
                     </strong>
+                    <div>
+                        <small>
+                            <strong>
+                                <i className="fa fa-label"></i>{" "}
+                                <span class="badge badge-dark">
+                                    {props.Kategori}
+                                </span>
+                            </strong>
+                        </small>
+                    </div>
                     <div className="">
                         {props.onView}
 

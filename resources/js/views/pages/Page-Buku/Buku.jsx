@@ -33,6 +33,9 @@ export default function componentName() {
     const [perPage] = useState(2);
     const [pageCount, setPageCount] = useState(0);
     const [useScann, setScann] = useState(0);
+
+    const [formSearch, setFormSearch] = useState(false);
+    const [search, setSearch] = useState(null);
     const hendltoggel = () => {
         $(".inp").hide();
         $(".tbl").removeClass("col-lg-6");
@@ -110,7 +113,8 @@ export default function componentName() {
     };
 
     const getListData = async () => {
-        const get = await axios.get(baseUrl + "api/getdataBuku");
+        const params = search != null ? "/" + search : "";
+        const get = await axios.get(baseUrl + "api/getdataBuku" + params);
         setListdata(get.data);
 
         // ///////////////////////////////////////////////
@@ -137,6 +141,7 @@ export default function componentName() {
                     className="mb-2"
                     image={baseUrl + "img/Buku/" + item.image}
                     title={item.judul_buku}
+                    Kategori={item.Kategori}
                 />
             </div>
         ));
@@ -205,14 +210,12 @@ export default function componentName() {
         const selectedPage = e.selected;
         setOffset(selectedPage + 1);
     };
-    useEffect(
-        () => {
-            JsBarcode("#barcode").init();
-            getListData();
-        },
-        [offset],
-        []
-    );
+
+    // use Efect
+    useEffect(() => {
+        getListData();
+        JsBarcode("#barcode").init();
+    }, [offset]);
     useEffect(() => {
         $(".modal-barcode").hide();
         if (kode == null || kode == "") {
@@ -224,20 +227,72 @@ export default function componentName() {
     useEffect(() => {
         $(".inp").hide();
     }, []);
+    useEffect(() => {
+        getListData();
+    }, [search]);
+    // ////////////////////////////////
 
     const getValScann = (data) => {
-        setKode(data);
-        $("#kode").attr("readonly", true);
-        $(".genBar").attr("disabled", true);
-        hendlInp();
+        if (formSearch) {
+            setSearch(data);
+            $("#search").val(data);
+        } else {
+            setKode(data);
+            $("#kode").attr("readonly", true);
+            $(".genBar").attr("disabled", true);
+            hendlInp();
+        }
     };
 
     return (
         <div className="row">
-            <div className="col-lg-12 mb-3">
+            <div
+                className="col-lg-12 mb-3"
+                style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                }}
+            >
                 <button className="btn btn-primary btn-sm" onClick={hendlInp}>
                     Input Buku
                 </button>
+
+                {formSearch ? (
+                    <div
+                        className="search-area"
+                        style={{
+                            display: "flex",
+                        }}
+                    >
+                        <input
+                            type="text"
+                            className="form-control form-control-sm"
+                            placeholder="search"
+                            id="search"
+                            onChange={(e) => {
+                                setSearch(e.target.value);
+                            }}
+                        />
+                        <CircleButton
+                            className="btn btn-info btn-sm mb-1 btn-close-search"
+                            onClick={() => {
+                                setFormSearch(false);
+                                setSearch(null);
+                            }}
+                        >
+                            x
+                        </CircleButton>
+                    </div>
+                ) : (
+                    <CircleButton
+                        className="btn btn-info btn-sm mb-1"
+                        onClick={() => {
+                            setFormSearch(true);
+                        }}
+                    >
+                        <i className="fa fa-search" />
+                    </CircleButton>
+                )}
             </div>
             <div className="col-lg-6 mb-1 inp">
                 <ECard
@@ -417,6 +472,24 @@ export default function componentName() {
 
             <div className="col-lg-12 mb-1 tbl">
                 <ECard>
+                    <div className="row">
+                        <div className="col-md-6">
+                            <div className="form-group">
+                                <input
+                                    type="text"
+                                    className="form-control form-control-sm"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div className="mb-2">
+                        {" "}
+                        <strong>
+                            <i className="fa fa-user"></i>Semua Kategori
+                        </strong>
+                    </div>
+
                     <div className="row">
                         {data}
                         <ReactPaginate
