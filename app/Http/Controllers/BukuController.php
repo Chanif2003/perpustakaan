@@ -105,4 +105,9 @@ class BukuController extends Controller
         $resData = Buku::wherekodeBuku($kode);
         return response()->json(['count' => $resData->count(), 'result' => $resData->first()]);
     }
+    public function searchKategori($slug = null)
+    {
+        $res = Buku::where('Kategori', 'like', '%' . $slug . '%')->select('Kategori', DB::raw("count(*) as jumlah"))->groupBy('Kategori')->get();
+        return response()->json($res);
+    }
 }

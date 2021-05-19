@@ -6,6 +6,9 @@ import $ from "jquery";
 import BarcodeReader from "react-barcode-reader";
 import Barcode from "./Barcode";
 import CircleButton from "../../../components/Button/CircleButton";
+import Swal from "sweetalert2";
+import Loading from "../../../components/LoadingPage/Loading";
+import PeminjamanActive from "./PeminjamanActive";
 export default function PagePeminjaman(props) {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -27,13 +30,39 @@ export default function PagePeminjaman(props) {
         msg: "",
     });
 
+    const [switchCase, setSwitchCase] = useState("save");
+    const [kodePin, setKodePin] = useState(null);
+
+    const [getStory, setStory] = useState([]);
+
     useEffect(() => {
         anggota(props.kode_anggota);
         chceckPinjaman(props.kode_anggota);
+        setKode_a(props.kode_anggota);
     }, [props.kode_anggota]);
 
+    useEffect(() => {
+        $("[name='tanggal_pinjam']").val(createP.tanggal_pinjam);
+        $("[name='lama_pinjam']").val(createP.lama_pinjam);
+        $("[name='detail']").val(createP.detail);
+    }, [createP]);
+    useEffect(() => {
+        $("[name='tanggal_pinjam']").val(createP.tanggal_pinjam);
+        $("[name='lama_pinjam']").val(createP.lama_pinjam);
+        $("[name='detail']").val(createP.detail);
+    }, [switPage]);
     const loadingPage = () => {
-        return <p>loading...</p>;
+        return (
+            <div
+                style={{
+                    position: "fixed",
+                    width: "100%",
+                    height: "100%",
+                }}
+            >
+                <Loading />
+            </div>
+        );
     };
 
     const anggota = async (kode_anggota) => {
@@ -51,7 +80,7 @@ export default function PagePeminjaman(props) {
             if (get.data > 0) {
                 setMsg(
                     <div>
-                        <p>Masih ada pinjaman yang belum di kembalikan</p>
+                        <p>Anda talah meminjam buku</p>
                     </div>
                 );
                 setValidate(false);
@@ -66,13 +95,7 @@ export default function PagePeminjaman(props) {
         return (
             <div>
                 <ECard>
-                    <ECardMsg className="msg-danger">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Atque ad error suscipit animi expedita a sunt
-                        accusantium, ut quis aliquid eligendi facilis et
-                        accusamus nobis consequatur. Facere laboriosam natus
-                        neque.
-                    </ECardMsg>
+                    <ECardMsg className="msg-danger">{msg}</ECardMsg>
                 </ECard>
             </div>
         );
@@ -188,14 +211,57 @@ export default function PagePeminjaman(props) {
         };
         // simpan//
         const hendlUpSave = () => {
-            const dataResult = {
+            let dataResult = {
                 pinjaman: createP,
                 troli_pinjaman: dataBuku,
                 member: data,
+                case: switchCase,
             };
-            console.log(dataResult);
+            if (kodePin != null) {
+                dataResult = { ...dataResult, kode_peminjaman: kodePin };
+            }
+
+            const push = async (_data) => {
+                const pushData = await axios.post(
+                    base_url + "api/pushPeminjamanBuku",
+                    _data
+                );
+                // console.log(pushData);
+                if (pushData.data.status == 200) {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Good Job",
+                        text: "Berhasil",
+                        confirmButtonText: "Ok",
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            anggota(kode_a);
+                            chceckPinjaman(kode_a);
+                        }
+                    });
+                } else {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops..!",
+                        text: res.data.msg,
+                        confirmButtonText: "Ok",
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            anggota(kode_a);
+                            chceckPinjaman(kode_a);
+                        }
+                    });
+                }
+            };
+            push(dataResult);
         };
         // ------
+        const hendlRemoveItem = (data, index) => {
+            const dataState = [...dataBuku];
+            // console.log(dataState);
+            dataState.splice(index, 1);
+            setDataBuku(dataState);
+        };
         const FormAddBook = () => {
             return (
                 <ECard title="Form Peminjaman Baru">
@@ -265,7 +331,12 @@ export default function PagePeminjaman(props) {
                                             <td>
                                                 <CircleButton
                                                     className="btn btn-danger btn-sm mb-1"
-                                                    onClick={() => {}}
+                                                    onClick={(items) => {
+                                                        hendlRemoveItem(
+                                                            items,
+                                                            i
+                                                        );
+                                                    }}
                                                 >
                                                     x
                                                 </CircleButton>
@@ -286,10 +357,10 @@ export default function PagePeminjaman(props) {
                             Back
                         </button>
                         <button
-                            className="btn btn-primary btn-sm"
+                            className="btn btn-primary btn-sm saves"
                             onClick={hendlUpSave}
                         >
-                            Next
+                            Simpan
                         </button>
                     </div>
                 </ECard>
@@ -303,11 +374,46 @@ export default function PagePeminjaman(props) {
             </div>
         );
     };
-
+    const hendelEditPinjaman = () => {
+        setValidate(true);
+        const getData = async (kode) => {
+            const get = await axios.get(
+                base_url + "api/getDataPeminjamanBuku/" + kode
+            );
+            // console.log(get);
+            setDataBuku(get.data.troli);
+            setSwitchCase("update");
+            setKodePin(get.data.peminjaman.kode_peminjaman);
+            setCreateP({
+                tanggal_pinjam: get.data.peminjaman.tanggal_pinjam,
+                lama_pinjam: get.data.peminjaman.lama_pinjam,
+                detail: get.data.peminjaman.detail,
+            });
+        };
+        getData(kode_a);
+    };
     const HistoryPeminjaman = () => {
         return (
-            <ECard className="mt-1">
-                <span>Histori Peminjaman</span>
+            <ECard
+                className="mt-1"
+                title={
+                    <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                        }}
+                    >
+                        <span>Buku dalam peminjaman</span>
+                        <button
+                            className="btn btn-success btn-sm"
+                            onClick={hendelEditPinjaman}
+                        >
+                            <i className="fa fa-edit"></i>
+                        </button>
+                    </div>
+                }
+            >
+                <PeminjamanActive userKode={kode_a} />
             </ECard>
         );
     };
@@ -376,17 +482,63 @@ export default function PagePeminjaman(props) {
             </ECard>
         );
     };
+    const handleRoute = () => {
+        window.location.reload();
+    };
+    const setDataStory = () => {
+        const sets = async () => {
+            const get = await axios.get(
+                base_url + "api/getStoryPeminjaman/" + kode_a
+            );
+            setStory(get.data);
+        };
+    };
+    const ListStory = () => {
+        return (
+            <ECard
+                className="mt-1"
+                title={
+                    <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                        }}
+                    >
+                        <span>Buku dalam peminjaman</span>
+                        <button
+                            className="btn btn-success btn-sm"
+                            onClick={hendelEditPinjaman}
+                        >
+                            <i className="fa fa-edit"></i>
+                        </button>
+                    </div>
+                }
+            >
+                <PeminjamanActive userKode={kode_a} />
+            </ECard>
+        );
+    };
+
     return loading ? (
         loadingPage()
     ) : (
         <div className="container">
             <div className="row">
+                <div className="col-md-12">
+                    <button
+                        className="btn btn-secondary btn-sm mb-1"
+                        onClick={handleRoute}
+                    >
+                        <i className="las la-arrow-alt-circle-left"></i>
+                    </button>
+                </div>
                 <div className="col-md-5">
                     <UserPage />
                 </div>
                 <div className="col-md-7">
                     {validate ? pagePeminjaman() : validatefalse()}
-                    <HistoryPeminjaman />
+
+                    {validate == false && <HistoryPeminjaman />}
                 </div>
             </div>
         </div>

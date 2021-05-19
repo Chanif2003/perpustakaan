@@ -15,6 +15,7 @@ class pinjaman extends Model
         "tanggal_pinjam",
         "lama_pinjam",
         "detail",
-        "status"
+        "status",
+        "keterangan"
     ];
 }

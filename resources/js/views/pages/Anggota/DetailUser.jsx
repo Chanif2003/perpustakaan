@@ -4,6 +4,7 @@ import { base_url } from "../../../constant/constant";
 import { useLocation } from "react-router";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import Loading from "../../../components/LoadingPage/Loading";
 const JsBarcode = require("jsbarcode");
 export default function DetailUser(props) {
     const history = useHistory();
@@ -29,7 +30,13 @@ export default function DetailUser(props) {
     const loadingPage = () => {
         return (
             <>
-                <p>Loading...</p>
+             <div
+                style={{
+                    position: "fixed",
+                    width: "100%",
+                    height: "100%",
+                }}
+            ><Loading/></div>
             </>
         );
     };

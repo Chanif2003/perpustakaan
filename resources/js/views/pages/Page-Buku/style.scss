@@ -128,8 +128,18 @@
     margin-top: 2px;
     color: gray;
     border: none;
+
     &:hover {
         color: red;
+    }
+}
+
+.search-live {
+    padding-left: 3px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #ddd;
     }
 }
 

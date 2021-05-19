@@ -20,6 +20,7 @@ import {
 } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 import ScannerComponent from "./ScannerComponent";
+import { If } from "react-if";
 export default function componentName() {
     const [kode, setKode] = useState(null);
     const [case_action, setCaseAction] = useState("save");
@@ -34,8 +35,9 @@ export default function componentName() {
     const [pageCount, setPageCount] = useState(0);
     const [useScann, setScann] = useState(0);
 
-    const [formSearch, setFormSearch] = useState(false);
+    const [formSearch, setFormSearch] = useState(true);
     const [search, setSearch] = useState(null);
+    const [liveSearch, setLiveSearch] = useState([]);
     const hendltoggel = () => {
         $(".inp").hide();
         $(".tbl").removeClass("col-lg-6");
@@ -48,6 +50,9 @@ export default function componentName() {
         $(".tbl").addClass("col-lg-6");
         $(".tbl").removeClass("col-lg-12");
         $(".el__").addClass("col-md-12");
+        setFormSearch(false);
+        setSearch(null);
+        $("#search").val("");
     };
 
     const hendelBarcode = () => {
@@ -243,7 +248,16 @@ export default function componentName() {
             hendlInp();
         }
     };
-
+    const hendlOnchngeKat = (event) => {
+        const getsearch = async (ev) => {
+            const get = await axios.get(baseUrl + "api/search_kategori/" + ev);
+            setLiveSearch(get.data);
+        };
+        getsearch(event.target.value);
+    };
+    const hendlClickLiveSearch = (e) => {
+        $("[name='Kategori']").val(e);
+    };
     return (
         <div className="row">
             <div
@@ -257,7 +271,7 @@ export default function componentName() {
                     Input Buku
                 </button>
 
-                {formSearch ? (
+                {/* {formSearch ? (
                     <div
                         className="search-area"
                         style={{
@@ -292,7 +306,7 @@ export default function componentName() {
                     >
                         <i className="fa fa-search" />
                     </CircleButton>
-                )}
+                )} */}
             </div>
             <div className="col-lg-6 mb-1 inp">
                 <ECard
@@ -315,7 +329,7 @@ export default function componentName() {
                 >
                     <form id="forms" onSubmit={formSubmit}>
                         <div className="row">
-                            <div className="col-md-8 mb-2">
+                            <div className="col-md-12 mb-2">
                                 <div
                                     className="form-group"
                                     style={{
@@ -343,33 +357,23 @@ export default function componentName() {
                                         name="kode_buku"
                                     />
                                     <ScannerComponent values={getValScann} />
-                                </div>
-                            </div>
-                            <div
-                                className="col-md-4"
-                                style={{
-                                    display: "flex",
-                                    justifyContent: "center",
-                                    alignItems: "flex-end",
-                                    // marginBottom: "1rem",
-                                }}
-                            >
-                                <div className="barcodes">
-                                    {/* <CreateBarcode /> */}
                                     <button
-                                        onClick={() => {
-                                            window.location.reload();
+                                        style={{
+                                            position: "absolute",
+                                            top: 30,
+                                            right: 20,
+                                            display: "flex",
+                                            justifyContent: "center",
+                                            alignItems: "center",
+                                            borderRadius: "50%",
+                                            padding: 5,
+                                            margin: 0,
                                         }}
-                                        className="btn btn-secondary btn-sm mr-1"
-                                    >
-                                        Batal
-                                    </button>
-                                    <button
                                         type="button"
                                         className="btn btn-primary btn-sm genBar"
                                         onClick={hendelBarcode}
                                     >
-                                        Buat Barcode
+                                        <i className="las la-sync-alt"></i>
                                     </button>
                                 </div>
                             </div>
@@ -390,7 +394,43 @@ export default function componentName() {
                                     type="text"
                                     className="form-control form-control-sm"
                                     name="Kategori"
+                                    onChange={hendlOnchngeKat}
                                 />
+                                <ECard
+                                    className={
+                                        liveSearch.length == 0 ? "d-none" : ""
+                                    }
+                                    title={
+                                        <div className="w-100 text-right">
+                                            <CircleButton
+                                                className="btn btn-secondary btn-sm mb-1"
+                                                onClick={() => {
+                                                    setLiveSearch([]);
+                                                    $("[name='Kategori']").val(
+                                                        ""
+                                                    );
+                                                }}
+                                            >
+                                                x
+                                            </CircleButton>
+                                        </div>
+                                    }
+                                >
+                                    {liveSearch.length > 0 &&
+                                        liveSearch.map((items_, i) => (
+                                            <p
+                                                className="search-live"
+                                                onClick={() => {
+                                                    hendlClickLiveSearch(
+                                                        items_.Kategori
+                                                    );
+                                                    setLiveSearch([]);
+                                                }}
+                                            >
+                                                {items_.Kategori}
+                                            </p>
+                                        ))}
+                                </ECard>
                             </div>
                             <div className="form-group">
                                 <label>Penerbit</label>
@@ -478,17 +518,37 @@ export default function componentName() {
                                 <input
                                     type="text"
                                     className="form-control form-control-sm"
+                                    id="search"
+                                    placeholder="cari scann barcode/ kategori / nama buku"
+                                    onChange={(e) => {
+                                        setSearch(e.target.value);
+                                    }}
                                 />
+                                {/* <ECard
+                                    style={{
+                                        position: "absolute",
+                                        zIndex: 1,
+                                    }}
+                                >
+                                    <p>o</p>
+                                    <p>o</p>
+                                    <p>o</p>
+                                    <p>o</p>
+                                    <p>o</p>
+                                    <p>o</p>
+                                    <p>o</p>
+                                    <p>o</p>
+                                </ECard> */}
                             </div>
                         </div>
                     </div>
                     <hr />
-                    <div className="mb-2">
+                    {/* <div className="mb-2">
                         {" "}
                         <strong>
                             <i className="fa fa-user"></i>Semua Kategori
                         </strong>
-                    </div>
+                    </div> */}
 
                     <div className="row">
                         {data}
@@ -569,3 +629,17 @@ export default function componentName() {
         </div>
     );
 }
+
+const LiveSearch = () => {
+    // const onChange = () => {};
+    return (
+        <div>
+            <input
+                type="text"
+                className="form-control form-control-sm"
+                name="Kategori"
+                onChange={hendlOnchngeKat}
+            />
+        </div>
+    );
+};

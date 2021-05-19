@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import ECard from "../../../components/Card/Ecard";
+import { ECard, ECartTable } from "../../../components/Card/Card";
 import { base_url } from "../../../constant/constant";
 import "./style.scss";
 import PagePeminjaman from "./PagePeminjaman";
+import PeminjamanActive from "./PeminjamanActive";
 export default function Peminjaman() {
     const [loading, setLoading] = useState(false);
     const [itmLoading, setItemLoading] = useState(false);
@@ -13,6 +14,8 @@ export default function Peminjaman() {
     const [page, setPage] = useState(0);
 
     const [kode, setKode] = useState(null);
+
+    const [dataPeminjamAktif, setdataPeminjamAktif] = useState([]);
 
     const hendelOnchangeSearch = (e) => {
         setItemLoading(true);
@@ -29,6 +32,14 @@ export default function Peminjaman() {
         };
         searchdata(e.target.value);
     };
+
+    useEffect(() => {
+        const listpeminjaman = async () => {
+            const get = await axios.get(base_url + "api/getlistpeminjaman");
+            setdataPeminjamAktif(get.data);
+        };
+        listpeminjaman();
+    }, []);
 
     const loadingPage = () => {
         return <p>Loading...</p>;
@@ -49,7 +60,6 @@ export default function Peminjaman() {
                         marginTop: 30,
                     }}
                 >
-                    <div className="col-lg-3"></div>
                     <div className="col-lg-6">
                         <ECard>
                             <div className="form-group">
@@ -106,6 +116,43 @@ export default function Peminjaman() {
                                           </ECard>
                                       );
                                   })}
+                        </ECard>
+                    </div>
+                    <div className="col-lg-6">
+                        <ECard title="Member yang sedang meminjam buku">
+                            {dataPeminjamAktif.map((items, i) => {
+                                return (
+                                    <ECard  key={i}  className="mb-2">
+                                        <ECartTable
+                                            title={
+                                                <div
+                                                    className="pb-2"
+                                                    style={{
+                                                        display: "flex",
+                                                        // justifyContent: "center",
+                                                        alignItems: "center",
+                                                    }}
+                                                >
+                                                    <img
+                                                        width="30px"
+                                                        height="30px"
+                                                        src={`${base_url}img/User/${items.foto}`}
+                                                    />
+                                                    <h6 className="m-0 ml-1">
+                                                        {items.nama}
+                                                    </h6>
+                                                </div>
+                                            }
+                                        >
+                                            <PeminjamanActive
+                                                userKode={items.kode_anggota}
+                                            />
+                                        </ECartTable>
+                                    </ECard>
+                                );
+                            })}
+
+                            {/* <PeminjamanActive userKode={kode_a} /> */}
                         </ECard>
                     </div>
                 </div>

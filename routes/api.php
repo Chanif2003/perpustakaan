@@ -39,6 +39,9 @@ Route::get('/getdataBuku/{slug?}', [
     \App\Http\Controllers\BukuController::class, 'getdataBuku'
 ]);
 
+Route::get('search_kategori/{slug?}', [
+    \App\Http\Controllers\BukuController::class, 'searchKategori'
+]);
 // Route::get('/getKategori/{slug?}', function(){
 //     \App\Models\Buku::
 // });
@@ -66,10 +69,35 @@ Route::get('/searchAnggota/{slug?}', [
     \App\Http\Controllers\PinjamanController::class, 'searchAnggota'
 ]);
 
+Route::get('/searchAnggotaPeminjaman/{param?}', [
+    \App\Http\Controllers\PinjamanController::class, 'searchAnggotaPeminjaman'
+]);
+
 // ///////// pinjaman 
 Route::get('/checkPinjaman/{slug?}', [
     \App\Http\Controllers\PinjamanController::class, 'checkPinjaman'
 ]);
 Route::get('/getBukuByKodeBuku/{slug?}', [
     App\Http\Controllers\BukuController::class, 'getBukuByKodeBuku'
+]);
+
+Route::post('/pushPeminjamanBuku', [
+    \App\Http\Controllers\PinjamanController::class, 'pushPeminjamanBuku'
+]);
+Route::get('/getDataPeminjamanBuku/{slug?}', [
+    \App\Http\Controllers\PinjamanController::class, 'getDataPeminjamanBuku'
+]);
+Route::get('/updateModive/{slug?}', [
+    \App\Http\Controllers\PinjamanController::class, 'updateModive'
+]);
+Route::get('/getlistpeminjaman', [
+    \App\Http\Controllers\PinjamanController::class, 'getlistpeminjaman'
+]);
+Route::get('/getStoryPeminjaman/{slug?}', [
+    App\Http\Controllers\PinjamanController::class, 'getStoryPeminjaman'
+]);
+
+
+Route::post('/pusdatapengembalian', [
+    App\Http\Controllers\PengembalianController::class, 'pusdatapengembalian'
 ]);
