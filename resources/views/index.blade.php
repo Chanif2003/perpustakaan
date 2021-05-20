@@ -14,11 +14,13 @@
     <link rel="stylesheet" href="{{ asset('font/Font-Awesome-master/css/all.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('font/awesome/css/line-awesome.min.css') }}" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/dt/dt-1.10.16/r-2.2.1/datatables.min.css" />
 </head>
 
 <body>
     <div id="root"></div>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://cdn.datatables.net/v/dt/dt-1.10.16/r-2.2.1/datatables.min.js"></script>
 </body>
 
 </html>

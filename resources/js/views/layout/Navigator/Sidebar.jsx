@@ -69,7 +69,7 @@ const Sidebar = (props) => {
                                 }
                             >
                                 <NavLink to="/Buku">
-                                    <span className="las la-igloo"></span>
+                                    <span className="las la-book"></span>
                                     <span>Buku</span>
                                 </NavLink>
                             </li>
@@ -81,7 +81,7 @@ const Sidebar = (props) => {
                                 }
                             >
                                 <NavLink to="/Anggota">
-                                    <span className="las la-igloo"></span>
+                                    <span className="las la-user-circle"></span>
                                     <span>Anggota</span>
                                 </NavLink>
                             </li>
@@ -93,7 +93,7 @@ const Sidebar = (props) => {
                                 }
                             >
                                 <NavLink to="/Pinjaman">
-                                    <span className="las la-igloo"></span>
+                                    <span className="las la-hand-holding-heart"></span>
                                     <span>Pinjaman</span>
                                 </NavLink>
                             </li>
@@ -105,7 +105,7 @@ const Sidebar = (props) => {
                                 }
                             >
                                 <NavLink to="/Pengembalian">
-                                    <span className="las la-igloo"></span>
+                                    <span className="lar la-handshake"></span>
                                     <span>Pengembalian</span>
                                 </NavLink>
                             </li>
@@ -117,7 +117,7 @@ const Sidebar = (props) => {
                                 }
                             >
                                 <NavLink to="/Laporan">
-                                    <span className="las la-igloo"></span>
+                                    <span className="las la-print"></span>
                                     <span>Laporan</span>
                                 </NavLink>
                             </li>
@@ -129,7 +129,7 @@ const Sidebar = (props) => {
                                 }
                             >
                                 <NavLink to="/Logout">
-                                    <span className="las la-igloo"></span>
+                                    <span className="las la-file-import"></span>
                                     <span>Logout</span>
                                 </NavLink>
                             </li>

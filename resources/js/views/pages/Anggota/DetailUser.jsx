@@ -170,7 +170,7 @@ export default function DetailUser(props) {
                                                     flexDirection: "column",
                                                 }}
                                             >
-                                                <strong>items.nama</strong>
+                                                <strong>{items.nama}</strong>
                                                 <small>
                                                     Tanggal Peminjaman :{" "}
                                                     {moment(

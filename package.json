@@ -25,6 +25,7 @@
         "sass-loader": "^8.0.0"
     },
     "dependencies": {
+        "datatables.net": "^1.10.24",
         "datatables.net-dt": "^1.10.24",
         "js-cookie": "^2.2.1",
         "jsbarcode": "^3.11.4",
