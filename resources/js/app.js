@@ -3,9 +3,9 @@ import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 // redux
-// import { createStore } from "redux";
-// import { Provider } from "react-redux";
-// import rootReducer from "./redux/redux";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import rootReducer from "./redux/redux";
 // ////
 import Routing from "./router/index";
 
@@ -21,11 +21,11 @@ const App = () => {
 
 export default App;
 
-// const storeRedux = createStore(rootReducer);
+const storeRedux = createStore(rootReducer);
 
 ReactDOM.render(
-    // <Provider store={storeRedux}>
-    <App />,
-    // </Provider>
+    <Provider store={storeRedux}>
+    <App />
+    </Provider>,
     document.getElementById("root")
 );

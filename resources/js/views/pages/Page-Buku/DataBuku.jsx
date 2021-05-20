@@ -28,7 +28,7 @@ export default function DataBuku(props) {
                         <small>
                             <strong>
                                 <i className="fa fa-label"></i>{" "}
-                                <span class="badge badge-dark">
+                                <span className="badge badge-dark">
                                     {props.Kategori}
                                 </span>
                             </strong>

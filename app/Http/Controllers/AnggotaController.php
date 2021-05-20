@@ -173,6 +173,15 @@ class AnggotaController extends Controller
             ->where(["kode_anggota" => $id])->first();
         return response()->json($get);
     }
+    public function LaporanDataAnggota($search = null)
+    {
+        $result = anggota::query()->where(function ($q) use ($search) {
+            $q->where('kode_anggota', 'like', '%' . $search . '%')
+                ->orWhere('isbn_anggota', 'like', '%' . $search . '%')
+                ->orWhere('nama', 'like', '%' . $search . '%');
+        })->get();
+        return response()->json($result);
+    }
 }
 
 

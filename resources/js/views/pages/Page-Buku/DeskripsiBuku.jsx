@@ -111,7 +111,7 @@ export default function DeskripsiBuku(props) {
                                     keys={<strong>Kategori</strong>}
                                     classKeysProps="pl-1"
                                     value={
-                                        <span class="badge badge-dark">
+                                        <span className="badge badge-dark">
                                             {getData.Kategori}
                                         </span>
                                     }

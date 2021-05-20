@@ -6,19 +6,22 @@ import { HashRouter, Router, Route, Link, Switch } from "react-router-dom";
 import BaseLayout from "../views/layout/Layout-base/Lay-sidebar";
 
 // ---------------------------master---------------------------------
-import Dashboard from "../views/pages/Page-Buku/Buku";
+import Dashboard from "../views/pages/DashBoard/Dashboard";
+import BukuTamu from "../views/pages/Buku-Tamu/BukuTamu";
 import Buku from "../views/pages/Page-Buku/Buku";
 import Barcode from "../views/pages/TestBarcode";
 import Login from "../views/pages/Login/Login";
 import Anggota from "../views/pages/Anggota/Anggota";
 import Peminjaman from "../views/pages/Peminjaman/Peminjaman";
 import Pengembalian from "../views/pages/Pengembalian/pengembalian";
-import Laporan from "../views/pages/Laporan/Laporan"
+import Laporan from "../views/pages/Laporan/Laporan";
 // -----------------------------------------------------------
 // ////child/////////////////////
 import DetailBuku from "../views/pages/Page-Buku/DeskripsiBuku";
 import DetailAnggota from "../views/pages/Anggota/DetailUser";
 // /////////////////////////////
+
+// Autentcation
 export default function index() {
     return (
         <>
@@ -28,6 +31,22 @@ export default function index() {
                         <Dashboard />
                     </BaseLayout>
                 </Route>
+                <Route path="/Dashboard" exact>
+                    <BaseLayout>
+                        <Dashboard />
+                    </BaseLayout>
+                </Route>
+                <Route path="/BukuTamu" exact>
+                    <BaseLayout>
+                        <BukuTamu />
+                    </BaseLayout>
+                </Route>
+                <Route path="/BukuTamu/:id" exact>
+                    <BaseLayout>
+                        <BukuTamu />
+                    </BaseLayout>
+                </Route>
+
                 <Route path="/Buku" exact>
                     <BaseLayout>
                         <Buku />

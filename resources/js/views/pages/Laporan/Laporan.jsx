@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import TablePeminjaman from "./TeblePeminjaman";
 import jsPDF from "jspdf";
-
+import TablePengembalian from "./TablePengembalian";
+import DataBuku from "./TableDataBuku";
+import TableMemberPustaka from "./TableMemberPustaka";
 export default function Laporan() {
+    const [navActive, setNavActive] = useState("Peminjaman");
+    const [page, setPage] = useState(<TablePeminjaman />);
     const generatePDF = () => {
         var doc = new jsPDF("p", "pt");
 
@@ -15,11 +19,30 @@ export default function Laporan() {
         // doc.save("demo.pdf");
         window.open(doc.output("bloburl"));
     };
-
+    const hendlNav = (navActive) => {
+        setNavActive(navActive);
+        switch (navActive) {
+            case "Peminjaman":
+                setPage(<TablePeminjaman />);
+                break;
+            case "Pengembalian":
+                setPage(<TablePengembalian />);
+                break;
+            case "Data Buku":
+                setPage(<DataBuku />);
+                break;
+            case "Data Member Pustaka":
+                setPage(<TableMemberPustaka />);
+                break;
+            default:
+                break;
+        }
+    };
+    // const page = () => {};
     return (
         <div>
-            <Navigasi />
-            <TablePeminjaman />
+            <Navigasi onActive={hendlNav} />
+            {page}
         </div>
     );
 }
@@ -28,25 +51,34 @@ export default function Laporan() {
 Download PDF
 </button> */
 }
-const Navigasi = () => {
+const Navigasi = (props) => {
+    const [nav, setnav] = useState("Peminjaman");
+    const Nitems = (params) => {
+        return (
+            <li
+                style={{
+                    cursor: "pointer",
+                }}
+                className="breadcrumb-item"
+                onClick={() => {
+                    setnav(params);
+                    props.onActive(params);
+                }}
+            >
+                <span className={nav == params ? "badge badge-info" : ""}>
+                    {params}
+                </span>
+            </li>
+        );
+    };
     return (
         <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
-                <li className="breadcrumb-item">
-                    <a href="#">Peminjaman</a>
-                </li>
-                <li className="breadcrumb-item">
-                    <a href="#">Pengembalian</a>
-                </li>
-                <li className="breadcrumb-item active" aria-current="page">
-                    Laporan Pengunjung
-                </li>
-                <li className="breadcrumb-item active" aria-current="page">
-                    Data Buku
-                </li>
-                <li className="breadcrumb-item active" aria-current="page">
-                    Data Member Pustaka
-                </li>
+                {Nitems("Peminjaman")}
+                {Nitems("Pengembalian")}
+                {Nitems("Laporan Pengunjung")}
+                {Nitems("Data Buku")}
+                {Nitems("Data Member Pustaka")}
             </ol>
         </nav>
     );

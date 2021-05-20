@@ -110,4 +110,23 @@ class BukuController extends Controller
         $res = Buku::where('Kategori', 'like', '%' . $slug . '%')->select('Kategori', DB::raw("count(*) as jumlah"))->groupBy('Kategori')->get();
         return response()->json($res);
     }
+    public function LaporanDataBuku($search = null)
+    {
+        $result = Buku::query()->where(function ($q) use ($search) {
+            $q->where('kode_buku', 'like', '%' . $search . '%')
+                ->orWhere('judul_buku', 'like', '%' . $search . '%')
+                ->orWhere('Kategori', 'like', '%' . $search . '%')
+                ->orWhere('pengarang', 'like', '%' . $search . '%');
+        })->get();
+        return response()->json($result);
+    }
+    public function getCouts()
+    {
+        $data = [
+            "Book" => Buku::all()->count(),
+            "Member" => \App\Models\anggota::wherestatus(0)->get()->count(),
+            "Pinjaman" => \App\Models\pinjaman::wherestatus('active')->get()->count()
+        ];
+        return response()->json($data);
+    }
 }

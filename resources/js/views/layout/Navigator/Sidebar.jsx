@@ -10,7 +10,16 @@ import {
     useLocation,
 } from "react-router-dom";
 import $ from "jquery";
+import axios from "axios";
 const Sidebar = (props) => {
+    const logout = () => {
+        const logout_ = async () => {
+            const out = await axios.post(base_url + "api/auth/logout");
+            console.log(out);
+            window.location.reload();
+        };
+        logout_();
+    };
     return (
         <aside className="sidebar">
             <div className="S-Header">
@@ -59,6 +68,18 @@ const Sidebar = (props) => {
                                 <NavLink to="/Dashboard">
                                     <span className="las la-igloo"></span>
                                     <span>Dasboard</span>
+                                </NavLink>
+                            </li>
+                            <li
+                                className={
+                                    useLocation().pathname == "/BukuTamu"
+                                        ? "active"
+                                        : ""
+                                }
+                            >
+                                <NavLink to="/BukuTamu">
+                                    <span className="las la-igloo"></span>
+                                    <span>Buku Tamu</span>
                                 </NavLink>
                             </li>
                             <li
@@ -128,10 +149,10 @@ const Sidebar = (props) => {
                                         : ""
                                 }
                             >
-                                <NavLink to="/Logout">
+                                <a onClick={logout}>
                                     <span className="las la-file-import"></span>
                                     <span>Logout</span>
-                                </NavLink>
+                                </a>
                             </li>
                         </ul>
                     </div>
