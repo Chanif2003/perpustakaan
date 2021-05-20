@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { ECard, ECardMsg } from "../../../components/Card/Card";
+import { ECard, ECardMsg, ECartTable } from "../../../components/Card/Card";
 import { base_url } from "../../../constant/constant";
 import $ from "jquery";
 import BarcodeReader from "react-barcode-reader";
@@ -9,6 +9,7 @@ import CircleButton from "../../../components/Button/CircleButton";
 import Swal from "sweetalert2";
 import Loading from "../../../components/LoadingPage/Loading";
 import PeminjamanActive from "./PeminjamanActive";
+import HistoryPem from "./HistoryPeminjaman";
 export default function PagePeminjaman(props) {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -34,11 +35,11 @@ export default function PagePeminjaman(props) {
     const [kodePin, setKodePin] = useState(null);
 
     const [getStory, setStory] = useState([]);
-
     useEffect(() => {
         anggota(props.kode_anggota);
         chceckPinjaman(props.kode_anggota);
         setKode_a(props.kode_anggota);
+        setDataStory(props.kode_anggota);
     }, [props.kode_anggota]);
 
     useEffect(() => {
@@ -395,7 +396,7 @@ export default function PagePeminjaman(props) {
     const HistoryPeminjaman = () => {
         return (
             <ECard
-                className="mt-1"
+                className="mt-1 mb-2"
                 title={
                     <div
                         style={{
@@ -485,38 +486,15 @@ export default function PagePeminjaman(props) {
     const handleRoute = () => {
         window.location.reload();
     };
-    const setDataStory = () => {
-        const sets = async () => {
+    const setDataStory = (kode) => {
+        const sets = async (kod) => {
             const get = await axios.get(
-                base_url + "api/getStoryPeminjaman/" + kode_a
+                base_url + "api/getStoryPeminjaman/" + kod
             );
+            console.log(get);
             setStory(get.data);
         };
-    };
-    const ListStory = () => {
-        return (
-            <ECard
-                className="mt-1"
-                title={
-                    <div
-                        style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                        }}
-                    >
-                        <span>Buku dalam peminjaman</span>
-                        <button
-                            className="btn btn-success btn-sm"
-                            onClick={hendelEditPinjaman}
-                        >
-                            <i className="fa fa-edit"></i>
-                        </button>
-                    </div>
-                }
-            >
-                <PeminjamanActive userKode={kode_a} />
-            </ECard>
-        );
+        sets(kode);
     };
 
     return loading ? (
@@ -539,6 +517,33 @@ export default function PagePeminjaman(props) {
                     {validate ? pagePeminjaman() : validatefalse()}
 
                     {validate == false && <HistoryPeminjaman />}
+                    {getStory.length > 0 &&
+                        getStory.map((items, i) => {
+                            return (
+                                <ECard className="mt-1 mb-1">
+                                    <ECartTable
+                                        className="mt-1"
+                                        title={
+                                            <div>
+                                                <span>
+                                                    Buku dalam peminjaman
+                                                </span>
+                                                <br />
+                                                <small>
+                                                    <span className="badge badge-success ml-1">
+                                                        Sudah di Kembalikan
+                                                    </span>
+                                                </small>
+                                            </div>
+                                        }
+                                    >
+                                        <HistoryPem
+                                            userKode={items.kode_anggota}
+                                        />
+                                    </ECartTable>
+                                </ECard>
+                            );
+                        })}
                 </div>
             </div>
         </div>

@@ -173,10 +173,41 @@ class PinjamanController extends Controller
         try {
 
             $get = DB::table('pinjaman')
+                ->select('*', 'pinjaman.status as statusPeminjaman')
                 ->join('anggota', function ($join) {
                     $join->on('anggota.kode_anggota', '=', 'pinjaman.kode_anggota');
                 })
                 ->where(['anggota.kode_anggota' => $kode_anggaota, "pinjaman.status" => 'active'])
+                ->first();
+
+            $troli = DB::table('troli_pinjaman')
+                ->join('buku', function ($join) {
+                    $join->on('troli_pinjaman.kode_buku', '=', 'buku.kode_buku');
+                })
+                ->where(['troli_pinjaman.kode_peminjaman' => $get->kode_peminjaman])
+                ->get();
+            $result = [
+                "peminjaman" => $get,
+                "troli"     => $troli
+            ];
+
+            return response()->json($result);
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
+            return response()->json(["status" => 500, "msg" => "gagal kesalahan query"]);
+        }
+    }
+    public function getDataPeminjamanBukuByIdUser($kode_anggaota = null)
+    {
+        try {
+
+            $get = DB::table('pinjaman')
+                ->join('anggota', function ($join) {
+                    $join->on('anggota.kode_anggota', '=', 'pinjaman.kode_anggota');
+                })
+                ->join('pengembalian', function ($join) {
+                    $join->on('pengembalian.kode_peminjaman', '=', 'pinjaman.kode_peminjaman');
+                })
+                ->where(['anggota.kode_anggota' => $kode_anggaota])
                 ->first();
 
             $troli = DB::table('troli_pinjaman')

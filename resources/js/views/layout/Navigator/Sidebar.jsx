@@ -111,14 +111,14 @@ const Sidebar = (props) => {
                             </li>
                             <li
                                 className={
-                                    useLocation().pathname == "/Histori"
+                                    useLocation().pathname == "/Laporan"
                                         ? "active"
                                         : ""
                                 }
                             >
-                                <NavLink to="/Histori">
+                                <NavLink to="/Laporan">
                                     <span className="las la-igloo"></span>
-                                    <span>Histori</span>
+                                    <span>Laporan</span>
                                 </NavLink>
                             </li>
                             <li

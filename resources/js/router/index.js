@@ -13,6 +13,7 @@ import Login from "../views/pages/Login/Login";
 import Anggota from "../views/pages/Anggota/Anggota";
 import Peminjaman from "../views/pages/Peminjaman/Peminjaman";
 import Pengembalian from "../views/pages/Pengembalian/pengembalian";
+import Laporan from "../views/pages/Laporan/Laporan"
 // -----------------------------------------------------------
 // ////child/////////////////////
 import DetailBuku from "../views/pages/Page-Buku/DeskripsiBuku";
@@ -62,6 +63,13 @@ export default function index() {
                         <Pengembalian />
                     </BaseLayout>
                 </Route>
+
+                <Route path="/Laporan">
+                    <BaseLayout>
+                        <Laporan />
+                    </BaseLayout>
+                </Route>
+
                 <Route path="/Barcode">
                     <Barcode />
                 </Route>

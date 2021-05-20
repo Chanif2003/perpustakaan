@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { ECard, ECartTable } from "../../../components/Card/Card";
 import { base_url } from "../../../constant/constant";
 import "./style.scss";
-import PeminjamanActive from "../Peminjaman/PeminjamanActive";
+import UserPengembalian from "../Peminjaman/HistoryPeminjaman";
 import $ from "jquery";
 import Loading from "../../../components/LoadingPage/Loading";
 import Swal from "sweetalert2";
@@ -273,7 +273,7 @@ export default function pengembalian() {
                                                 </div>
                                             }
                                         >
-                                            <PeminjamanActive
+                                            <UserPengembalian
                                                 userKode={items.kode_anggota}
                                             />
                                         </ECartTable>

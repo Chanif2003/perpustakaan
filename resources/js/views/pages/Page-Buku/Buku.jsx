@@ -31,7 +31,7 @@ export default function componentName() {
 
     const [offset, setOffset] = useState(0);
     const [data, setData] = useState([]);
-    const [perPage] = useState(2);
+    const [perPage] = useState(5);
     const [pageCount, setPageCount] = useState(0);
     const [useScann, setScann] = useState(0);
 

@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useCallback } from "react";
-import ECard from "../../../components/Card/Ecard";
+import { ECard, ECartTable } from "../../../components/Card/Card";
 import { base_url } from "../../../constant/constant";
 import { useLocation } from "react-router";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import Loading from "../../../components/LoadingPage/Loading";
+import PenminjamanActive from "./PeminjamanActive";
+import HistoryPeminjaman from "./HistoryPeminjaman";
+const moment = require("moment");
 const JsBarcode = require("jsbarcode");
 export default function DetailUser(props) {
     const history = useHistory();
@@ -16,10 +19,23 @@ export default function DetailUser(props) {
     };
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState([]);
+    const [PeminjamanActive, setPeminjamanActive] = useState([]);
+    const [cekPeminjaman, setCekPeminjaman] = useState(false);
+    const [getStory, setStory] = useState([]);
     useEffect(() => {
         setLoading(true);
         getDataUser(getLocationParams()[1]);
+        cekPeminjaman_(getLocationParams()[1]);
+        setDataStory(getLocationParams()[1]);
     }, []);
+
+    const cekPeminjaman_ = (id) => {
+        const cek = async (kode) => {
+            const get = await axios.get(base_url + "api/cekPeminjaman/" + kode);
+            setCekPeminjaman(get.data);
+        };
+        cek(id);
+    };
     const getDataUser = async (us) => {
         const get = await axios.get(base_url + "api/getDataAnggotaById/" + us);
         setData(get.data);
@@ -27,23 +43,34 @@ export default function DetailUser(props) {
             setLoading(false);
         }, 1000);
     };
+    const setDataStory = (kode) => {
+        const sets = async (kod) => {
+            const get = await axios.get(
+                base_url + "api/getStoryPeminjaman/" + kod
+            );
+            console.log(get);
+            setStory(get.data);
+        };
+        sets(kode);
+    };
     const loadingPage = () => {
         return (
             <>
-             <div
-                style={{
-                    position: "fixed",
-                    width: "100%",
-                    height: "100%",
-                }}
-            ><Loading/></div>
+                <div
+                    style={{
+                        position: "fixed",
+                        width: "100%",
+                        height: "100%",
+                    }}
+                >
+                    <Loading />
+                </div>
             </>
         );
     };
     const render = () => {
         return (
             <div className="row">
-                <div className="col-md-3"></div>
                 <div className="col-lg-6 mb-3">
                     <ECard
                         title={
@@ -119,6 +146,47 @@ export default function DetailUser(props) {
                             </div>
                         </div>
                     </ECard>
+                </div>
+                <div className="col-md-6">
+                    {cekPeminjaman > 0 && (
+                        <ECard
+                            className="mb-1"
+                            title="User Sedang Meminjam Buku"
+                        >
+                            <PenminjamanActive
+                                userKode={getLocationParams()[1]}
+                            />
+                        </ECard>
+                    )}
+                    {getStory.length > 0 &&
+                        getStory.map((items, i) => {
+                            return (
+                                <ECard className="mb-1">
+                                    <ECartTable
+                                        title={
+                                            <div
+                                                style={{
+                                                    display: "flex",
+                                                    flexDirection: "column",
+                                                }}
+                                            >
+                                                <strong>items.nama</strong>
+                                                <small>
+                                                    Tanggal Peminjaman :{" "}
+                                                    {moment(
+                                                        items.tanggal_pinjam
+                                                    ).format("DD-MMM-YYYY")}
+                                                </small>
+                                            </div>
+                                        }
+                                    >
+                                        <HistoryPeminjaman
+                                            userKode={items.kode_anggota}
+                                        />
+                                    </ECartTable>
+                                </ECard>
+                            );
+                        })}
                 </div>
             </div>
         );

@@ -81,6 +81,7 @@ Route::get('/getBukuByKodeBuku/{slug?}', [
     App\Http\Controllers\BukuController::class, 'getBukuByKodeBuku'
 ]);
 
+
 Route::post('/pushPeminjamanBuku', [
     \App\Http\Controllers\PinjamanController::class, 'pushPeminjamanBuku'
 ]);
@@ -96,6 +97,13 @@ Route::get('/getlistpeminjaman', [
 Route::get('/getStoryPeminjaman/{slug?}', [
     App\Http\Controllers\PinjamanController::class, 'getStoryPeminjaman'
 ]);
+Route::get('/getDataPeminjamanBukuByIdUser/{slug?}', [
+    App\Http\Controllers\PinjamanController::class, 'getDataPeminjamanBukuByIdUser'
+]);
+Route::get('/cekPeminjaman/{id}', function ($id) {
+    $cek = App\Models\pinjaman::where(["kode_anggota" => $id, "status" => 'active'])->count();
+    return response()->json($cek);
+});
 
 
 Route::post('/pusdatapengembalian', [
