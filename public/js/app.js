@@ -4407,7 +4407,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Laporan() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {});
+  var generatePDF = function generatePDF() {
+    var doc = new jspdf__WEBPACK_IMPORTED_MODULE_1__.default("p", "pt");
+    doc.text(20, 20, "This is the first title.");
+    doc.addFont("helvetica", "normal");
+    doc.text(20, 60, "This is the second title.");
+    doc.text(20, 100, "This is the thrid title."); // doc.save("demo.pdf");
+
+    window.open(doc.output('bloburl'));
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+      onClick: generatePDF,
+      type: "primary",
+      children: "Download PDF"
+    })
+  });
 }
 
 /***/ }),
@@ -110408,7 +110424,7 @@ function valueEqual(a, b) {
 /******/ 					__webpack_require__.m[moduleId] = moreModules[moduleId];
 /******/ 				}
 /******/ 			}
-/******/ 			if(runtime) var result = runtime(__webpack_require__);
+/******/ 			if(runtime) runtime(__webpack_require__);
 /******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
 /******/ 			for(;i < chunkIds.length; i++) {
 /******/ 				chunkId = chunkIds[i];
@@ -110417,7 +110433,7 @@ function valueEqual(a, b) {
 /******/ 				}
 /******/ 				installedChunks[chunkIds[i]] = 0;
 /******/ 			}
-/******/ 			return __webpack_require__.O(result);
+/******/ 			__webpack_require__.O();
 /******/ 		}
 /******/ 		
 /******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
