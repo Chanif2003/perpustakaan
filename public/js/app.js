@@ -104126,7 +104126,7 @@ module.exports = function (list, options) {
 /***/ (function(module) {
 
 /*!
-* sweetalert2 v10.16.9
+* sweetalert2 v10.16.7
 * Released under the MIT License.
 */
 (function (global, factory) {
@@ -107752,7 +107752,7 @@ module.exports = function (list, options) {
     };
   });
   SweetAlert.DismissReason = DismissReason;
-  SweetAlert.version = '10.16.9';
+  SweetAlert.version = '10.16.7';
 
   var Swal = SweetAlert;
   Swal["default"] = Swal;
