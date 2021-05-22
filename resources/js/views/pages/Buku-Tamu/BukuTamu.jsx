@@ -171,8 +171,12 @@ const BukuTamuComponent = () => {
         useEffect(() => {
             if (render) {
                 JqueryEx();
+                $(document).on("click", ".dels", (d) => {
+                    console.log(d);
+                });
             }
         }, [render]);
+
         const JqueryEx = () => {
             $(document).ready(function () {
                 var table = $("#example").DataTable({
@@ -245,7 +249,10 @@ const BukuTamuComponent = () => {
                                             >
                                                 <i className="fa fa-edit"></i>
                                             </a>
-                                            <button className="btn btn-danger btn-sm">
+                                            <button
+                                                data-id={item.id}
+                                                className="btn btn-danger btn-sm dels"
+                                            >
                                                 <i className="las la-trash-alt"></i>
                                             </button>
                                         </td>

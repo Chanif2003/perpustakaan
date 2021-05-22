@@ -46,9 +46,15 @@ export default function Login() {
                 });
             });
         if (log != undefined) {
-            Cookies.set("token", log.data.access_token, { expires: 7 });
-            setLoading(false);
-            window.location.href = base_url + "Dashboard";
+            if (log.data.user.level == "Admin") {
+                Cookies.set("token", log.data.access_token, { expires: 7 });
+                setLoading(false);
+                window.location.href = base_url + "Dashboard";
+            }else{
+                Cookies.set("token", log.data.access_token, { expires: 7 });
+                setLoading(false);
+                window.location.href = base_url + "Home";
+            }
         }
     };
     const getdata = () => {

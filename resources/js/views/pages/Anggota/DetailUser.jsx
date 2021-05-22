@@ -182,6 +182,7 @@ export default function DetailUser(props) {
                                     >
                                         <HistoryPeminjaman
                                             userKode={items.kode_anggota}
+                                            kodePinjam={items.kode_peminjaman}
                                         />
                                     </ECartTable>
                                 </ECard>

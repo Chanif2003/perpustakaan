@@ -129,4 +129,8 @@ class BukuController extends Controller
         ];
         return response()->json($data);
     }
+    public function getDataKategoriBuku()
+    {
+        return response()->json(Buku::select('Kategori')->groupBy('Kategori')->get());
+    }
 }

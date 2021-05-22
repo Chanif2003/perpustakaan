@@ -13,12 +13,16 @@ export default function HistoryPeminjaman(props) {
         setLoading(true);
         if (props.userKode != null) {
             setUserKode(props.userKode);
-            getData(props.userKode);
+            getData(props.userKode,props.kodePinjam);
         }
-    }, [props.userKode, userKode]);
-    const getData = async (kode) => {
+    }, [props.userKode,props.kodePinjam, userKode]);
+    const getData = async (kode, kodePinjam) => {
         const get = await axios.get(
-            base_url + "api/getDataPeminjamanBukuByIdUser/" + kode
+            base_url +
+                "api/getDataPeminjamanBukuByIdUser/" +
+                kode +
+                "/" +
+                kodePinjam
         );
         setResult(get.data);
         setLoading(false);
@@ -112,7 +116,8 @@ export default function HistoryPeminjaman(props) {
                         KeyData="Lama Pinjam"
                         value={
                             <span className="badge badge-info ml-1">
-                                {loadResult && result.peminjaman.lama_pinjam + ' Hari'}
+                                {loadResult &&
+                                    result.peminjaman.lama_pinjam + " Hari"}
                             </span>
                         }
                     />

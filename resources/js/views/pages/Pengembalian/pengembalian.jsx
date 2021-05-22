@@ -3,11 +3,11 @@ import React, { useEffect, useState } from "react";
 import { ECard, ECartTable } from "../../../components/Card/Card";
 import { base_url } from "../../../constant/constant";
 import "./style.scss";
-import UserPengembalian from "../Peminjaman/HistoryPeminjaman";
+import UserPengembalian from "./PeminjamanActive";
 import $ from "jquery";
 import Loading from "../../../components/LoadingPage/Loading";
 import Swal from "sweetalert2";
-
+import PeminjamanActive from "../Peminjaman/PeminjamanActive";
 export default function pengembalian() {
     const [loading, setLoading] = useState(false);
     const [itmLoading, setItemLoading] = useState(false);
@@ -249,37 +249,47 @@ export default function pengembalian() {
                     </div>
                     <div className="col-lg-6">
                         <ECard title="Member yang sedang meminjam buku">
-                            {dataPeminjamAktif.map((items, i) => {
-                                return (
-                                    <ECard key={i} className="mb-2">
-                                        <ECartTable
-                                            title={
-                                                <div
-                                                    className="pb-2"
-                                                    style={{
-                                                        display: "flex",
-                                                        // justifyContent: "center",
-                                                        alignItems: "center",
-                                                    }}
-                                                >
-                                                    <img
-                                                        width="30px"
-                                                        height="30px"
-                                                        src={`${base_url}img/User/${items.foto}`}
+                            {dataPeminjamAktif.length > 0 &&
+                                dataPeminjamAktif.map((items, i) => {
+                                    return (
+                                        <ECard key={i} className="mb-2">
+                                            <ECartTable
+                                                title={
+                                                    <div
+                                                        className="pb-2"
+                                                        style={{
+                                                            display: "flex",
+                                                            // justifyContent: "center",
+                                                            alignItems:
+                                                                "center",
+                                                        }}
+                                                    >
+                                                        <img
+                                                            width="30px"
+                                                            height="30px"
+                                                            src={`${base_url}img/User/${items.foto}`}
+                                                        />
+                                                        <h6 className="m-0 ml-1">
+                                                            {items.nama}
+                                                        </h6>
+                                                    </div>
+                                                }
+                                            >
+                                                {items.kode_peminjaman !=
+                                                    null && (
+                                                    <UserPengembalian
+                                                        userKode={
+                                                            items.kode_anggota
+                                                        }
+                                                        kodePinjam={
+                                                            items.kode_peminjaman
+                                                        }
                                                     />
-                                                    <h6 className="m-0 ml-1">
-                                                        {items.nama}
-                                                    </h6>
-                                                </div>
-                                            }
-                                        >
-                                            <UserPengembalian
-                                                userKode={items.kode_anggota}
-                                            />
-                                        </ECartTable>
-                                    </ECard>
-                                );
-                            })}
+                                                )}
+                                            </ECartTable>
+                                        </ECard>
+                                    );
+                                })}
 
                             {/* <PeminjamanActive userKode={kode_a} /> */}
                         </ECard>

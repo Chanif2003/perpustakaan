@@ -11,14 +11,18 @@ export default function HistoryPeminjaman(props) {
     const [loading, setLoading] = useState(false);
     useEffect(() => {
         setLoading(true);
-        if (props.userKode != null) {
+        if (props.userKode != null && props.kodePinjam != null) {
             setUserKode(props.userKode);
-            getData(props.userKode);
+            getData(props.userKode, props.kodePinjam);
         }
-    }, [props.userKode, userKode]);
-    const getData = async (kode) => {
+    }, [props.userKode, props.kodePinjam, userKode]);
+    const getData = async (kode, kodePinjam) => {
         const get = await axios.get(
-            base_url + "api/getDataPeminjamanBukuByIdUser/" + kode
+            base_url +
+                "api/getDataPeminjamanBukuByIdUser/" +
+                kode +
+                "/" +
+                kodePinjam
         );
         setResult(get.data);
         setLoading(false);

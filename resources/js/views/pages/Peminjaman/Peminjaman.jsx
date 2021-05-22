@@ -60,7 +60,7 @@ export default function Peminjaman() {
                         marginTop: 30,
                     }}
                 >
-                    <div className="col-lg-6">
+                    <div className="col-lg-6 mb-2">
                         <ECard>
                             <div className="form-group">
                                 <input

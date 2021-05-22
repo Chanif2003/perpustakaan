@@ -6,6 +6,16 @@ import { base_url } from "../../../constant/constant";
 import { connect } from "react-redux";
 const Cookies = require("js-cookie");
 import Loading from "../../../components/LoadingPage/Loading";
+import {
+    Router,
+    Route,
+    Link,
+    Switch,
+    NavLink,
+    useHistory,
+    useLocation,
+    Redirect
+} from "react-router-dom";
 const Base = (props) => {
     const [autentication, setAutentication] = useState([]);
     const [loading, setLoading] = useState(true);

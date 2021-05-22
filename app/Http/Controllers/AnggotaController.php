@@ -182,6 +182,14 @@ class AnggotaController extends Controller
         })->get();
         return response()->json($result);
     }
+    public function getDataAnggotaByUserId($userId)
+    {
+        $get = DB::table('anggota')
+            ->join('users', function ($join) {
+                $join->on('users.id', '=', 'anggota.user_id');
+            })->where('anggota.user_id', '=', $userId)->first();
+        return response()->json($get);
+    }
 }
 
 

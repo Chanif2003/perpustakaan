@@ -4,21 +4,11 @@ import jsPDF from "jspdf";
 import TablePengembalian from "./TablePengembalian";
 import DataBuku from "./TableDataBuku";
 import TableMemberPustaka from "./TableMemberPustaka";
+import PinjamanReport from "./PrintTemplate/Pinjaman";
 export default function Laporan() {
     const [navActive, setNavActive] = useState("Peminjaman");
     const [page, setPage] = useState(<TablePeminjaman />);
-    const generatePDF = () => {
-        var doc = new jsPDF("p", "pt");
 
-        doc.text(20, 20, "This is the first title.");
-
-        doc.addFont("helvetica", "normal");
-        doc.text(20, 60, "This is the second title.");
-        doc.text(20, 100, "This is the thrid title.");
-
-        // doc.save("demo.pdf");
-        window.open(doc.output("bloburl"));
-    };
     const hendlNav = (navActive) => {
         setNavActive(navActive);
         switch (navActive) {
@@ -41,16 +31,13 @@ export default function Laporan() {
     // const page = () => {};
     return (
         <div>
+            {/* <PinjamanReport/> */}
             <Navigasi onActive={hendlNav} />
             {page}
         </div>
     );
 }
-{
-    /* <button onClick={generatePDF} type="primary">
-Download PDF
-</button> */
-}
+
 const Navigasi = (props) => {
     const [nav, setnav] = useState("Peminjaman");
     const Nitems = (params) => {

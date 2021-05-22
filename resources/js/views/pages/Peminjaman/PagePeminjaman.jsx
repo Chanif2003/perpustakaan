@@ -539,6 +539,7 @@ export default function PagePeminjaman(props) {
                                     >
                                         <HistoryPem
                                             userKode={items.kode_anggota}
+                                            kodePinjam={items.kode_peminjaman}
                                         />
                                     </ECartTable>
                                 </ECard>

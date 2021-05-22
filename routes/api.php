@@ -45,9 +45,10 @@ Route::get('search_kategori/{slug?}', [
 Route::get('/getCouts', [
     App\Http\Controllers\BukuController::class, 'getCouts'
 ]);
-// Route::get('/getKategori/{slug?}', function(){
-//     \App\Models\Buku::
-// });
+
+Route::get('/getDataKategoriBuku', [
+    App\Http\Controllers\BukuController::class, 'getDataKategoriBuku'
+]);
 
 Route::get('getDataByKode/{slug}', [
     \App\Http\Controllers\BukuController::class, 'getDataByKode'
@@ -69,6 +70,10 @@ Route::get('/getDataAnggotaById/{slug?}', [
     \App\Http\Controllers\AnggotaController::class, 'getDataAnggotaById'
 ]);
 
+Route::get('/getDataAnggotaByUserId/{slug}', [
+    App\Http\Controllers\AnggotaController::class, 'getDataAnggotaByUserId'
+]);
+
 Route::post('/peminjaman', [
     \App\Http\Controllers\PinjamanController::class, 'peminjaman'
 ]);
@@ -79,6 +84,7 @@ Route::get('/searchAnggota/{slug?}', [
 Route::get('/searchAnggotaPeminjaman/{param?}', [
     \App\Http\Controllers\PinjamanController::class, 'searchAnggotaPeminjaman'
 ]);
+
 
 // ///////// pinjaman 
 Route::get('/checkPinjaman/{slug?}', [
@@ -108,8 +114,11 @@ Route::get('/getlistpeminjaman', [
 Route::get('/getStoryPeminjaman/{slug?}', [
     App\Http\Controllers\PinjamanController::class, 'getStoryPeminjaman'
 ]);
-Route::get('/getDataPeminjamanBukuByIdUser/{slug?}', [
+Route::get('/getDataPeminjamanBukuByIdUser/{slug?}/{kodePinjam?}', [
     App\Http\Controllers\PinjamanController::class, 'getDataPeminjamanBukuByIdUser'
+]);
+Route::get('/getDataPeminjamanBukuActives/{slug?}/{kodePinjam?}', [
+    App\Http\Controllers\PinjamanController::class, 'getDataPeminjamanBukuActives'
 ]);
 Route::get('/cekPeminjaman/{id}', function ($id) {
     $cek = App\Models\pinjaman::where(["kode_anggota" => $id, "status" => 'active'])->count();
@@ -118,7 +127,9 @@ Route::get('/cekPeminjaman/{id}', function ($id) {
 Route::get('/getdataPeminjam/{search?}', [
     App\Http\Controllers\PinjamanController::class, 'getdataPeminjam'
 ]);
-
+Route::get('/getAllPeminjaman/{slug?}', [
+    App\Http\Controllers\PinjamanController::class, 'getAllPeminjaman'
+]);
 
 
 
@@ -138,4 +149,14 @@ Route::get('/getdataBukuTamu/{slug?}', [
 ]);
 Route::get('/getdataBukuTamuById/{s?}', [
     App\Http\Controllers\BukuTamuController::class, 'getdataBukuTamuById'
+]);
+
+// Dashboard
+Route::get('/dashboardResult/{case}/{search?}', [
+    App\Http\Controllers\DashboardController::class, 'index'
+]);
+
+
+Route::post('/ProfileChange', [
+    App\Http\Controllers\ProfileController::class, 'ProfileChange'
 ]);
