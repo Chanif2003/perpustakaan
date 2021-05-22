@@ -31,7 +31,6 @@ export default function DeskripsiBuku(props) {
     useEffect(
         () => {
             reqGetData(getLocationParams()[1]);
-            // JsBarcode("#barcode").init();
             if (loading) {
                 var number = getData.kode_buku;
 

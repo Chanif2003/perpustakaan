@@ -3,7 +3,8 @@ import ReactPaginate from "react-paginate";
 import Swal from "sweetalert2";
 const baseUrl = require("../../../../../constant/constant").base_url;
 const JsBarcode = require("jsbarcode");
-export default function ListBuku() {
+import ComponentListBuku from "./ComponentItemBuku";
+export default function ListBuku(props) {
     const [offset, setOffset] = useState(0);
     const [data, setData] = useState([]);
     const [perPage] = useState(5);
@@ -14,6 +15,12 @@ export default function ListBuku() {
     useEffect(() => {
         getListData();
     }, [offset]);
+    useEffect(() => {
+        if (props.search != null) {
+            setSearch(props.search);
+        }
+        getListData();
+    }, [props.search, search]);
     const handlePageClick = (e) => {
         const selectedPage = e.selected;
         setOffset(selectedPage + 1);
@@ -26,13 +33,24 @@ export default function ListBuku() {
         // ///////////////////////////////////////////////
         const data = get.data;
         const slice = data.slice(offset, offset + perPage);
-        const postData = slice.map((item, i) => (
-            <div className="el__ col-md-6" key={i}>
-                {item.judul_buku}
-            </div>
-        ));
+        const postData = slice.map((item, i) => {
+            const prps = {
+                img: baseUrl + "img/Buku/" + item.image,
+                title: item.judul_buku,
+                id: item.kode_buku,
+            };
+            return (
+                <div className="el__ col-lg-4 col-md-12 mb-3" key={i}>
+                    <ComponentListBuku {...prps} />
+                </div>
+            );
+        });
         setData(postData);
         setPageCount(Math.ceil(data.length / perPage));
     };
-    return <div>{data}</div>;
+    return (
+        <div>
+            <div className="row">{data}</div>
+        </div>
+    );
 }

@@ -28,6 +28,7 @@ const Cookies = require("js-cookie");
 import Home from "../views/pages/Web/Home/Home";
 import Profile from "../views/pages/Web/Profile/Profile";
 import Book from "../views/pages/Web/Buku/Buku";
+import BukuDetail from "../views/pages/Web/Buku/components/DeskripsiBuku";
 // //////////////////////////////
 
 // Autentcation
@@ -138,6 +139,11 @@ function index(props) {
                         <Route path="/Buku" exact>
                             <BaseLayout>
                                 <Book />
+                            </BaseLayout>
+                        </Route>
+                        <Route path="/Buku/:id" exact>
+                            <BaseLayout>
+                                <BukuDetail />
                             </BaseLayout>
                         </Route>
                         <Route path="/Profile" exact>

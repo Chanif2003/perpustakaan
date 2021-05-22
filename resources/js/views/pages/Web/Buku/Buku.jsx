@@ -10,14 +10,31 @@ import Swal from "sweetalert2";
 import Kategori from "./components/Kategori";
 import ListBuku from "./components/ListBuku";
 export default function Buku() {
+    const [search, setSearch] = useState(null);
+    const hendlSearch = (evn) => {
+        setSearch(evn.target.value);
+    };
     return (
-        <div className="container">
+        <div className="container mt-3">
             <div className="row">
-                <aside className="col-md-6 col-lg-4">
+                <aside className="col-md-6 col-lg-4 mb-3">
                     <Kategori />
                 </aside>
                 <aside className="col-md-6 col-lg-8">
-                    <ListBuku />
+                    <ECard
+                        title={
+                            <div className="form-group w-50">
+                                <input
+                                    type="text"
+                                    className="form-control form-control-sm"
+                                    placeholder="Search"
+                                    onChange={hendlSearch}
+                                />
+                            </div>
+                        }
+                    >
+                        <ListBuku search={search} />
+                    </ECard>
                 </aside>
             </div>
         </div>

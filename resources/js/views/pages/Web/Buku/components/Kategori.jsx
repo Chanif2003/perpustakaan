@@ -17,7 +17,7 @@ export default function Kategori() {
         <div class="list-group mt-0">
             {kategori.length > 0 &&
                 kategori.map((it, i) => (
-                    <a href="#" class="list-group-item list-group-item-action ">
+                    <a key={i} href="#" class="list-group-item list-group-item-action ">
                         Cras justo odio
                     </a>
                 ))}
