@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use SebastianBergmann\Environment\Console;
 
 /*
 |--------------------------------------------------------------------------
@@ -159,4 +160,28 @@ Route::get('/dashboardResult/{case}/{search?}', [
 
 Route::post('/ProfileChange', [
     App\Http\Controllers\ProfileController::class, 'ProfileChange'
+]);
+
+
+Route::get('/deleteBukutamu/{slug}', function ($id) {
+    $del = \App\Models\buku_tamu::whereid($id)->delete();
+    if ($del) {
+        return response()->json(["status" => 200, "msg" => "aksi berhasil"]);
+    } else {
+        return response()->json(["status" => 409, "msg" => "aksi gagal pada database"]);
+    }
+});
+
+Route::get('/deleteAnggota/{slug}', function ($id) {
+    $del = \App\Models\anggota::wherekode_anggota($id)->delete();
+    if ($del) {
+        return response()->json(["status" => 200, "msg" => "aksi berhasil"]);
+    } else {
+        return response()->json(["status" => 409, "msg" => "aksi gagal pada database"]);
+    }
+});
+
+
+Route::get('/getdataPengunjung/{search?}', [
+    \App\Http\Controllers\BukuTamuController::class, 'getdataPengunjung'
 ]);

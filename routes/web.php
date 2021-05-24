@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/print-Laporan/{case}/{search?}', [
+    \App\Http\Controllers\LaporanController::class, 'index'
+]);
+
 Route::get('/{slug?}', function () {
     return view('index');
 });

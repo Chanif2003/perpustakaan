@@ -5,6 +5,7 @@ import { ECard } from "../../../components/Card/Card";
 import { base_url } from "../../../constant/constant";
 import { NavLink } from "react-router-dom";
 const JsBarcode = require("jsbarcode");
+import Swal from "sweetalert2";
 export default function Output(props) {
     const [loading, setLoading] = useState(false);
     const [offset, setOffset] = useState(0);
@@ -19,7 +20,48 @@ export default function Output(props) {
         resultData();
         setLoading(true);
     }, [props.classItem, lay, offset]);
-
+    const hndelDeletes = (id) => {
+        const hndelDel = async (kode_anggota) => {
+            const del = await axios
+                .get(base_url + "api/deleteAnggota/" + kode_anggota)
+                .catch((e) => {
+                    console.log(e);
+                });
+            if (del.data.status == 200) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Good Job",
+                    text: "Berhasil",
+                    confirmButtonText: "Ok",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.reload();
+                    }
+                });
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops..!",
+                    text: del.data.msg,
+                    confirmButtonText: "Ok",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.reload();
+                    }
+                });
+            }
+        };
+        const is = id;
+        Swal.fire({
+            text: "Yakin Akan Menghapus Data?",
+            showCancelButton: true,
+            confirmButtonText: `Ya`,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                hndelDel(is);
+            }
+        });
+    };
     const resultData = async () => {
         const getData = await axios.get(`${base_url}api/getDataAnggota`);
         const data = getData.data;
@@ -71,7 +113,12 @@ export default function Output(props) {
                                 >
                                     <i className="las la-edit"></i>
                                 </button>
-                                <button className="btn btn-danger btn-sm ml-1">
+                                <button
+                                    className="btn btn-danger btn-sm ml-1"
+                                    onClick={(e) => {
+                                        hndelDeletes(item.kode_anggota);
+                                    }}
+                                >
                                     <i className="las la-trash-alt"></i>
                                 </button>
                             </div>

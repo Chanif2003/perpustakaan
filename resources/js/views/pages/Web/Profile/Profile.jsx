@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 import HistoryPeminjaman from "./HistoryPeminjaman";
 import axios from "axios";
 import PeminjamanActive from "./PeminjamanActive";
+import "./style.scss";
 function Profile(props) {
     const history = useHistory();
     const handleRoute = useCallback(() => history.push("/Anggota"), [history]);
@@ -121,7 +122,7 @@ function Profile(props) {
                                     }}
                                 />
                                 <button
-                                    className="btn btn-success btn-sm"
+                                    className="btn btn-success btn-sm btn-circle-up-img"
                                     onClick={hendlImageChange}
                                     style={{
                                         position: "relative",
@@ -134,7 +135,7 @@ function Profile(props) {
                                 <strong>
                                     {data.name}{" "}
                                     <button
-                                        className="btn btn-success btn-sm"
+                                        className="btn btn-success btn-sm btn-circle-up"
                                         data-toggle="modal"
                                         data-target="#exampleModal"
                                         onClick={() => {
@@ -174,7 +175,7 @@ function Profile(props) {
                                     <p style={{ marginBottom: 0 }}>
                                         {data.jenis_klamin}{" "}
                                         <button
-                                            className="btn btn-success btn-sm"
+                                            className="btn btn-success btn-sm btn-circle-up"
                                             data-toggle="modal"
                                             data-target="#exampleModal"
                                             onClick={() => {
@@ -212,7 +213,7 @@ function Profile(props) {
                                             " " +
                                             data.tanggal_lahir}{" "}
                                         <button
-                                            className="btn btn-success btn-sm"
+                                            className="btn btn-success btn-sm btn-circle-up"
                                             data-toggle="modal"
                                             data-target="#exampleModal"
                                             onClick={() => {
@@ -257,7 +258,7 @@ function Profile(props) {
                                     <p style={{ marginBottom: 0 }}>
                                         {data.tlp}{" "}
                                         <button
-                                            className="btn btn-success btn-sm"
+                                            className="btn btn-success btn-sm btn-circle-up"
                                             data-toggle="modal"
                                             data-target="#exampleModal"
                                             onClick={() => {
@@ -293,7 +294,7 @@ function Profile(props) {
                                     <p style={{ marginBottom: 0 }}>
                                         {data.alamat}{" "}
                                         <button
-                                            className="btn btn-success btn-sm"
+                                            className="btn btn-success btn-sm btn-circle-up"
                                             data-toggle="modal"
                                             data-target="#exampleModal"
                                             onClick={() => {
@@ -347,7 +348,7 @@ function Profile(props) {
                             <p style={{ marginBottom: 0 }}>
                                 {data.email}{" "}
                                 <button
-                                    className="btn btn-success btn-sm"
+                                    className="btn btn-success btn-sm btn-circle-up"
                                     data-toggle="modal"
                                     data-target="#exampleModal"
                                     onClick={() => {
@@ -379,7 +380,7 @@ function Profile(props) {
                             <p style={{ marginBottom: 0 }}>
                                 ********{" "}
                                 <button
-                                    className="btn btn-success btn-sm"
+                                    className="btn btn-success btn-sm btn-circle-up"
                                     data-toggle="modal"
                                     data-target="#exampleModal"
                                     onClick={() => {

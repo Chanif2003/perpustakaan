@@ -98,4 +98,12 @@ class BukuTamuController extends Controller
             return response()->json(["status" => 500, "msg" => "gagal kesalahan query"]);
         }
     }
+    public function getdataPengunjung($search = null)
+    {
+        $run = buku_tamu::query()->where(function ($q) use ($search) {
+            $q->where('tanggal', 'like', '%' . $search . '%')
+                ->orWhere('nama', 'like', '%' . $search . '%');
+        })->get();
+        return response()->json($run);
+    }
 }

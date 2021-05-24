@@ -5,6 +5,7 @@ import TablePengembalian from "./TablePengembalian";
 import DataBuku from "./TableDataBuku";
 import TableMemberPustaka from "./TableMemberPustaka";
 import PinjamanReport from "./PrintTemplate/Pinjaman";
+import TablePengunjung from "./TablePengunjung";
 export default function Laporan() {
     const [navActive, setNavActive] = useState("Peminjaman");
     const [page, setPage] = useState(<TablePeminjaman />);
@@ -17,6 +18,9 @@ export default function Laporan() {
                 break;
             case "Pengembalian":
                 setPage(<TablePengembalian />);
+                break;
+            case "Laporan Pengunjung":
+                setPage(<TablePengunjung />);
                 break;
             case "Data Buku":
                 setPage(<DataBuku />);

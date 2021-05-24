@@ -9,7 +9,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>React Laravel</title>
+    <title>Aplikasi Perpustakaan</title>
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('font/Font-Awesome-master/css/all.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('font/awesome/css/line-awesome.min.css') }}" />

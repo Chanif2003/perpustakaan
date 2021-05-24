@@ -17,7 +17,9 @@ export default function TablePengembalian() {
     }, []);
 
     const getDataPeminjam = async (search) => {
-        const get = await axios.get(base_url + "api/getdataPengembalian/" + search);
+        const get = await axios.get(
+            base_url + "api/getdataPengembalian/" + search
+        );
         setDataPeminjam(get.data);
         setLoading(false);
         console.log(get.data);
@@ -49,6 +51,13 @@ export default function TablePengembalian() {
                     ditemukan
                 </h5>
             </ECard>
+        );
+    };
+    const hendelPrint = () => {
+        const search = mountsSearch == null ? "" : mountsSearch;
+        window.open(
+            base_url + "print-Laporan/pengembalian/" + search,
+            "_blank" // <- This is what makes it open in a new window.
         );
     };
     return (
@@ -85,7 +94,10 @@ export default function TablePengembalian() {
                         }}
                     >
                         <div className="form-group m-0 p-0">
-                            <button className="btn btn-secondary btn-sm">
+                            <button
+                                className="btn btn-secondary btn-sm"
+                                onClick={hendelPrint}
+                            >
                                 <i className="fa fa-print"></i> Print
                             </button>
                         </div>

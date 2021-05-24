@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { HashRouter, Router, Route, Link, Switch } from "react-router-dom";
+import { useLocation } from "react-router";
 
 // //////////////////
 // import TestBarcode from "../views/pages/TestBarcode";
@@ -34,6 +35,11 @@ import BukuDetail from "../views/pages/Web/Buku/components/DeskripsiBuku";
 // Autentcation
 function index(props) {
     const [auth, setAuth] = useState([]);
+    const location = useLocation();
+    const getLocationParams = () => {
+        const url = location.pathname.substr(1).split("/");
+        return url;
+    };
     useEffect(() => {
         getdata();
     }, []);
@@ -47,7 +53,13 @@ function index(props) {
             .get(base_url + "api/auth/user-profile", {
                 headers: { Authorization: `Bearer ${Cookies.get("token")}` },
             })
-            .catch((error) => {});
+            .catch((error) => {
+                console.log();
+                if (getLocationParams()[0] != "login") {
+                    window.location.href = base_url + "login";
+                }
+            });
+        console.log(auth);
         setAuth(auth.data);
     };
     return (

@@ -171,11 +171,59 @@ const BukuTamuComponent = () => {
         useEffect(() => {
             if (render) {
                 JqueryEx();
-                $(document).on("click", ".dels", (d) => {
-                    console.log(d);
+                $(document).on("click", ".dels", (e) => {
+                    // console.log();
+                    deletes(e.target.getAttribute("data-id"));
                 });
             }
         }, [render]);
+
+        const deletes = (id) => {
+            let idd = id;
+            Swal.fire({
+                text: "Yakin Akan Menghapus Data?",
+                showCancelButton: true,
+                confirmButtonText: `Ya`,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    try {
+                        const del = axios
+                            .get(base_url + "api/deleteBukutamu/" + idd)
+                            .then((response) => {
+                                console.log(response);
+                                if (response.data.status == 200) {
+                                    Swal.fire({
+                                        icon: "success",
+                                        title: "Good Job",
+                                        text: "Berhasil",
+                                        confirmButtonText: "Ok",
+                                    }).then((result) => {
+                                        if (result.isConfirmed) {
+                                            window.location.href =
+                                                base_url + "BukuTamu";
+                                        }
+                                    });
+                                } else {
+                                    Swal.fire({
+                                        icon: "error",
+                                        title: "Oops..!",
+                                        text: response.data.msg,
+                                        confirmButtonText: "Ok",
+                                    }).then((result) => {
+                                        if (result.isConfirmed) {
+                                            window.location.href =
+                                                base_url + "BukuTamu";
+                                        }
+                                    });
+                                }
+                            })
+                            .catch((e) => {
+                                console.log(e);
+                            });
+                    } catch (e) {}
+                }
+            });
+        };
 
         const JqueryEx = () => {
             $(document).ready(function () {

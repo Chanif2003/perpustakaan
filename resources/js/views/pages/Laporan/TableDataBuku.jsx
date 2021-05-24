@@ -42,6 +42,13 @@ export default function TableDataBuku() {
             </ECard>
         );
     };
+    const hendelPrint = () => {
+        const search = mountsSearch == null ? "" : mountsSearch;
+        window.open(
+            base_url + "print-Laporan/buku/" + search,
+            "_blank" // <- This is what makes it open in a new window.
+        );
+    };
     return (
         <div>
             <ECard className="mb-1">
@@ -66,7 +73,10 @@ export default function TableDataBuku() {
                         }}
                     >
                         <div className="form-group m-0 p-0">
-                            <button className="btn btn-secondary btn-sm">
+                            <button
+                                className="btn btn-secondary btn-sm"
+                                onClick={hendelPrint}
+                            >
                                 <i className="fa fa-print"></i> Print
                             </button>
                         </div>

@@ -44,6 +44,13 @@ export default function TableMemberPustaka() {
             </ECard>
         );
     };
+    const hendelPrint = () => {
+        const search = mountsSearch == null ? "" : mountsSearch;
+        window.open(
+            base_url + "print-Laporan/anggota/" + search,
+            "_blank" // <- This is what makes it open in a new window.
+        );
+    };
     return (
         <div>
             <ECard className="mb-1">
@@ -55,7 +62,7 @@ export default function TableMemberPustaka() {
                                 type="text"
                                 className="form-control form-control-sm"
                                 onChange={hendelSearchSearch}
-                                placeholder="cari berdadsarkan nama / kode member "
+                                placeholder="cari berdadsarkan nama / kode member"
                             />
                         </div>
                     </div>
@@ -68,7 +75,10 @@ export default function TableMemberPustaka() {
                         }}
                     >
                         <div className="form-group m-0 p-0">
-                            <button className="btn btn-secondary btn-sm">
+                            <button
+                                className="btn btn-secondary btn-sm"
+                                onClick={hendelPrint}
+                            >
                                 <i className="fa fa-print"></i> Print
                             </button>
                         </div>

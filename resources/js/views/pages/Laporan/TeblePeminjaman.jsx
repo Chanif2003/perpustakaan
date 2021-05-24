@@ -40,6 +40,13 @@ export default function TeblePeminjaman() {
             </ECard>
         );
     };
+    const hendelPrint = () => {
+        const search = mountsSearch == null ? "" : mountsSearch;
+        window.open(
+            base_url + "print-Laporan/pinjaman/" + search,
+            "_blank" // <- This is what makes it open in a new window.
+        );
+    };
     const MissData = () => {
         return (
             <ECard className="text-center">
@@ -76,19 +83,25 @@ export default function TeblePeminjaman() {
                             />
                         </div>
                     </div>
-                    <div className="col-md-2" style={{
-                        display:'flex',
-                        justifyContent:'center',
-                        alignItems:'center'
-                    }}>
+                    <div
+                        className="col-md-2"
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                        }}
+                    >
                         <div className="form-group m-0 p-0">
-                            <button className="btn btn-secondary btn-sm">
+                            <button
+                                className="btn btn-secondary btn-sm"
+                                onClick={hendelPrint}
+                            >
                                 <i className="fa fa-print"></i> Print
                             </button>
                         </div>
                     </div>
                 </div>
-            </ECard >
+            </ECard>
             {dataPeminjam.length > 0 ? (
                 renders ? (
                     <TbJquery data={dataPeminjam} />
@@ -179,7 +192,7 @@ const TbJquery = (props) => {
                                     <td>
                                         {item.pinjaman.lama_pinjam + " Hari"}
                                     </td>
-                                    <td>{item.jumlahPinjam + ' Buku'}</td>
+                                    <td>{item.jumlahPinjam + " Buku"}</td>
                                     <td>
                                         <button className="btn btn-danger btn-sm">
                                             <i className="las la-trash-alt"></i>
