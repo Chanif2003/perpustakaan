@@ -185,3 +185,30 @@ Route::get('/deleteAnggota/{slug}', function ($id) {
 Route::get('/getdataPengunjung/{search?}', [
     \App\Http\Controllers\BukuTamuController::class, 'getdataPengunjung'
 ]);
+
+
+Route::get('/deletePeminjaman/{id}', function ($id) {
+    $peminjaman = \App\Models\pinjaman::wherekodePeminjaman($id)->delete();
+    $pengembalian = \App\Models\pengembalian::wherekodePeminjaman($id);
+    if ($pengembalian->get()->count() > 0) {
+        $delpengembalian = \App\Models\pengembalian::wherekodePeminjaman($id)->delete();
+    }
+    if ($peminjaman) {
+        return response()->json(["status" => 200, "msg" => "aksi berhasil"]);
+    } else {
+        return response()->json(["status" => 409, "msg" => "aksi gagal pada database"]);
+    }
+});
+Route::get('/deletePengembalian/{slug?}', function ($id) {
+    $pengembalian = \App\Models\pengembalian::wherekodePeminjaman($id);
+    $delpengembalian = false;
+    if ($pengembalian->get()->count() > 0) {
+        $delpengembalian = \App\Models\pengembalian::wherekodePeminjaman($id)->delete();
+        $peminjaman = \App\Models\pinjaman::wherekodePeminjaman($id)->update(["status" => 'active']);
+    }
+    if ($delpengembalian) {
+        return response()->json(["status" => 200, "msg" => "aksi berhasil"]);
+    } else {
+        return response()->json(["status" => 409, "msg" => "aksi gagal pada database"]);
+    }
+});

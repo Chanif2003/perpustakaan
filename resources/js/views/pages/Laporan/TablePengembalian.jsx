@@ -6,6 +6,7 @@ import ECard from "../../../components/Card/Ecard";
 import axios from "axios";
 import { base_url } from "../../../constant/constant";
 import Loading from "../../../components/LoadingPage/Loading";
+import Swal from "sweetalert2";
 export default function TablePengembalian() {
     const [dataPeminjam, setDataPeminjam] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -60,6 +61,7 @@ export default function TablePengembalian() {
             "_blank" // <- This is what makes it open in a new window.
         );
     };
+
     return (
         <div>
             <ECard className="mb-1">
@@ -130,6 +132,12 @@ const TbJquery = (props) => {
     useEffect(() => {
         if (render) {
             JqueryEx();
+            $(document).on("click", ".dels", (e) => {
+                console.log("ok");
+                if (e.target.getAttribute("data-id") != null) {
+                    deletes(e.target.getAttribute("data-id"));
+                }
+            });
         }
     }, [render]);
     const JqueryEx = () => {
@@ -159,6 +167,48 @@ const TbJquery = (props) => {
                     .find("td:first-child")
                     .trigger("click");
             });
+        });
+    };
+    const deletes = (id) => {
+        const run = async (kode) => {
+            const del = await axios.get(
+                base_url + "api/deletePengembalian/" + kode
+            );
+            console.log(del);
+            if (del.data.status == 200) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Good Job",
+                    text: "Berhasil",
+                    confirmButtonText: "Ok",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.reload();
+                    }
+                });
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops..!",
+                    text: del.data.msg,
+                    confirmButtonText: "Ok",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.reload();
+                    }
+                });
+            }
+        };
+
+        const kode = id;
+        Swal.fire({
+            text: "Yakin Akan Menghapus Data?",
+            showCancelButton: true,
+            confirmButtonText: `Ya`,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                run(kode);
+            }
         });
     };
     return (
@@ -204,7 +254,12 @@ const TbJquery = (props) => {
                                     <td>{item.jumlahPinjam + " Buku"}</td>
                                     <td>{item.pinjaman.catatan}</td>
                                     <td>
-                                        <button className="btn btn-danger btn-sm">
+                                        <button
+                                            className="btn btn-danger btn-sm dels"
+                                            data-id={
+                                                item.pinjaman.kode_peminjaman
+                                            }
+                                        >
                                             <i className="las la-trash-alt"></i>
                                         </button>
                                     </td>

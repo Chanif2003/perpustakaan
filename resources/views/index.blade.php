@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('font/awesome/css/line-awesome.min.css') }}" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/v/dt/dt-1.10.16/r-2.2.1/datatables.min.css" />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
 <body>

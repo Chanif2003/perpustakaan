@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
+import { connect } from "react-redux";
 import Swal from "sweetalert2";
 const baseUrl = require("../../../../../constant/constant").base_url;
 const JsBarcode = require("jsbarcode");
 import ComponentListBuku from "./ComponentItemBuku";
-export default function ListBuku(props) {
+function ListBuku(props) {
     const [offset, setOffset] = useState(0);
     const [data, setData] = useState([]);
     const [perPage] = useState(5);
@@ -14,7 +15,18 @@ export default function ListBuku(props) {
 
     useEffect(() => {
         getListData();
+        console.log(props.ReduxSearch);
     }, [offset]);
+    useEffect(() => {
+        if (props.ReduxSearch != undefined) {
+            if (props.ReduxSearch == "all") {
+                setSearch(null);
+            } else {
+                setSearch(props.ReduxSearch);
+            }
+        }
+        getListData();
+    }, [props.ReduxSearch, search]);
     useEffect(() => {
         if (props.search != null) {
             setSearch(props.search);
@@ -54,3 +66,9 @@ export default function ListBuku(props) {
         </div>
     );
 }
+const mapRedux = (store) => {
+    return {
+        ReduxSearch: store.kategori,
+    };
+};
+export default connect(mapRedux)(ListBuku);

@@ -3,6 +3,7 @@ const initState = {
 };
 
 const rootReducer = (state = initState, action) => {
+    console.log();
     switch (action.type) {
         case "Login":
             return {
@@ -10,7 +11,12 @@ const rootReducer = (state = initState, action) => {
                 autentication: action.data,
             };
             break;
-
+        case "KATEGORI":
+            return {
+                ...state,
+                kategori: action.data,
+            };
+            break;
         default:
             break;
     }

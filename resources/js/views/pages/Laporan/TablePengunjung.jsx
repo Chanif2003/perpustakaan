@@ -171,7 +171,6 @@ const TbJquery = (props) => {
                         <th>Kelas</th>
                         <th>tanggal</th>
                         <th>keperluan</th>
-                        <th>Hapus</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -185,11 +184,6 @@ const TbJquery = (props) => {
                                     <td>{item.kelas}</td>
                                     <td>{item.tanggal}</td>
                                     <td>{item.keperluan}</td>
-                                    <td>
-                                        <button className="btn btn-danger btn-sm">
-                                            <i className="las la-trash-alt"></i>
-                                        </button>
-                                    </td>
                                 </tr>
                             );
                         })}

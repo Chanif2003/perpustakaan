@@ -215,7 +215,7 @@ const Sidebar = (props) => {
                                     }
                                 >
                                     <NavLink to="/Buku">
-                                        <span className="las la-igloo"></span>
+                                        <span className="las la-book"></span>
                                         <span>Buku</span>
                                     </NavLink>
                                 </li>
@@ -228,7 +228,7 @@ const Sidebar = (props) => {
                                     }
                                 >
                                     <NavLink to="/Profile">
-                                        <span className="las la-igloo"></span>
+                                        <span className="las la-user-circle"></span>
                                         <span>Profile</span>
                                     </NavLink>
                                 </li>

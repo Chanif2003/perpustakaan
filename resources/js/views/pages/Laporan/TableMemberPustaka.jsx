@@ -178,15 +178,6 @@ const TbJquery = (props) => {
                                     <td>{item.tlp}</td>
                                     <td>{item.alamat}</td>
                                     <td> {item.tahun_masuk}</td>
-
-                                    <td>
-                                        <button className="btn btn-info btn-sm mr-1">
-                                            <i className="las la-trash-alt"></i>
-                                        </button>
-                                        <button className="btn btn-danger btn-sm">
-                                            <i className="las la-trash-alt"></i>
-                                        </button>
-                                    </td>
                                 </tr>
                             );
                         })}
