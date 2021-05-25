@@ -33,8 +33,8 @@ const Sidebar = (props) => {
     return (
         <aside className="sidebar">
             <div className="S-Header">
-                {/* <img src={Logo} className="Logo" /> */}
-                {/* <h5 className="title">{Title}</h5> */}
+                {/* <img  src={`${base_url}img/images/bg.jpg`}  className="Logo" /> */}
+                <h5 className="title">SMK N 1 BENAI</h5>
             </div>
             <div className="S-Main-Top">
                 <div className="S-Main-Panel">
